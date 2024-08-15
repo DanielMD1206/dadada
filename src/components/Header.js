@@ -23,7 +23,7 @@ export default function Example() {
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                src="../img/Captura_de_pantalla_2024-08-15_075316-removebg-preview.png" 
                 className="h-8 w-auto"
               />
             </a>
@@ -47,7 +47,7 @@ export default function Example() {
           </div>
           <div className="hidden lg:flex text-[#3C474D] lg:flex-1 lg:justify-end hover:text-[#000] transition ease delay-150">
             <a href="#" className="text-sm font-semibold leading-6 tooltip" data-tooltip="Registrate">
-              <FontAwesomeIcon icon={faUser} /><span aria-hidden="true"><FontAwesomeIcon icon={faArrowRight} /></span>
+              <FontAwesomeIcon icon={faUser} /><span aria-hidden="true"> <FontAwesomeIcon icon={faArrowRight} /></span>
             </a>
           </div>
         </nav>
