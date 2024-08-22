@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Product from '../components/Product'
 import Footer from '../components/Footer'
+import Eventos from '../components/Eventos'
 
 function Main() {
   return (
@@ -11,7 +12,8 @@ function Main() {
         <Header />
         <Hero />
         <Product/>
-        <Footer/>
+        <Eventos />
+        <Footer />
     </div>
   )
 }

@@ -1,9 +1,9 @@
 // src/App.js
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Product from './components/Product';
-import Catalogo from './pages/Catalogo'; // Asegúrate de que la importación sea correcta
-import Main from './pages/Main';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Catalogo from "./pages/Catalogo"; // Asegúrate de que la importación sea correcta
+import Main from "./pages/Main";
+import Evento from "./pages/Evento";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/catalogo" element={<Catalogo />} />
-          {/* Agrega más rutas aquí si es necesario */}
+          <Route path="/evento" element={<Evento />} />
         </Routes>
       </main>
     </div>

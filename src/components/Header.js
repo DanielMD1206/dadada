@@ -50,7 +50,7 @@ export default function Header() {
               <span className="ml-2">Catalogo</span>
             </Link>
             <Link
-              to="/eventos"
+              to="/evento"
               className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150"
             >
               <FontAwesomeIcon icon={faGifts} />
