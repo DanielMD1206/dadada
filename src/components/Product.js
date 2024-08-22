@@ -1,4 +1,4 @@
-import img from "../static/img/pexels-anna-romanova-1406375-17887747.jpg"
+import img from "../static/img/pexels-iriser-1408221 (2).jpg"
 
 const products = [
   {
@@ -112,7 +112,7 @@ export default function Product() {
                   </p>
                 </div>
                 <div className="pt-[5px]">
-                  <button className="w-full bg-[#282828] hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
+                  <button className="w-full bg-[#FFDCF9] text-black py-2 px-4 rounded">
                     Ver
                   </button>
                 </div>
