@@ -7,15 +7,17 @@ import {
   faCalendarDay,
   faEnvelope,
   faPhone,
+  faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-function Footer() {
+function Footer({ toggleCart }) {
   return (
     <>
       <div className="h-1/2 w-full flex md:flex-row flex-col justify-around items-start p-20">
-        <div className="p-5 ">
+        {/* Redes Sociales */}
+        <div className="p-5">
           <ul>
             <p className="text-gray-800 font-bold text-3xl pb-6">
               Nuestras<span className="text-gray-400"> Redes</span>
@@ -36,6 +38,8 @@ function Footer() {
             </div>
           </ul>
         </div>
+        
+        {/* Contactenos */}
         <div className="p-5">
           <ul>
             <p className="text-gray-800 font-bold text-2xl pb-4">Contactenos</p>
@@ -50,6 +54,8 @@ function Footer() {
             </li>
           </ul>
         </div>
+        
+        {/* Sección de Flores */}
         <div className="p-5">
           <ul>
             <p className="text-gray-800 font-bold text-2xl pb-4">Flores</p>
@@ -70,6 +76,8 @@ function Footer() {
             </li>
           </ul>
         </div>
+
+        {/* Descripción de Servicios */}
         <div className="p-5">
           <ul>
             <p className="text-gray-800 font-bold text-2xl pb-4">
@@ -86,7 +94,9 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center text-center  p-5 bg-gray-50">
+
+      {/* Sección de Derechos Reservados */}
+      <div className="flex flex-col justify-center items-center text-center p-5 bg-gray-50">
         <h1 className=" text-gray-700 font-semibold">
           © 2023-2024 Todos los derechos reservados | Construido con ❤ por{" "}
           <span className="hover:text-[#000] font-semibold cursor-pointer transition duration-300 ease-in-out">
@@ -94,6 +104,14 @@ function Footer() {
           </span>
         </h1>
       </div>
+
+      {/* Botón del Carrito */}
+      <button 
+        onClick={toggleCart} 
+        className="fixed bottom-4 left-4 bg-[#FFDCF9] text-black p-4 rounded-full shadow-lg"
+      >
+        <FontAwesomeIcon icon={faShoppingCart} className="h-5 w-5" />
+      </button>
     </>
   );
 }

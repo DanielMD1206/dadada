@@ -57,14 +57,14 @@ export default function Header() {
               <span className="ml-2">Eventos</span>
             </Link>
             <Link
-              to="/sobre-nosotros"
+              to="/about"
               className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150"
             >
               <FontAwesomeIcon icon={faUserGroup} />
               <span className="ml-2">Sobre Nosotros</span>
             </Link>
             <Link
-              to="/contactenos"
+              to="/contact"
               className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150"
             >
               <FontAwesomeIcon icon={faPhone} />

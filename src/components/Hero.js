@@ -14,7 +14,7 @@ export default function Hero() {
           Distribuimos en Funza
           {/*<span className="w-[200px] h-[1px] bg-gray-900 inline-block ml-4"></span>*/}
         </h1>
-        <p className="pt-[40px] text-gray-700 text-lg">
+        <p className="pt-[40px] text-gray-700 text-lg p-12">
           Bienvenidos a Yesid Distribuidora de Flores, su aliado ideal en el
           mundo de la floricultura. Ubicados en Funza, <br /> un municipio
           estratégico cerca de Bogotá, ofrecemos una amplia variedad de flores

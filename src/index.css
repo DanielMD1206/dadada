@@ -40,3 +40,9 @@ body::-webkit-scrollbar{
     object-fit: cover;
   }
 }
+
+@media screen and (max-width: 720px){
+  .span{
+    display: none;
+  }
+}

@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import Product from '../components/Product'
 import Footer from '../components/Footer'
 import Eventos from '../components/Eventos'
+import Contact from '../components/Contact'
 
 function Main() {
   return (
@@ -13,6 +14,7 @@ function Main() {
         <Hero />
         <Product/>
         <Eventos />
+        <Contact />
         <Footer />
     </div>
   )

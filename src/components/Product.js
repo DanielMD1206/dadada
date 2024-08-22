@@ -79,9 +79,9 @@ export default function Product() {
   return (
     <div className="products pt-[90px]">
       <h1 className="text-center font-bold text-gray-900 text-3xl">
-        <span className="w-[200px] h-[1px] bg-gray-900 inline-block mr-4"></span>
+        <span className="span w-[200px] h-[1px] bg-gray-900 inline-block mr-4"></span>
             Nuestros Productos
-        <span className="w-[200px] h-[1px] bg-gray-900 inline-block ml-4"></span>
+        <span className="span w-[200px] h-[1px] bg-gray-900 inline-block ml-4"></span>
       </h1>
       <div className="bg-white">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6  lg:max-w-7xl lg:px-8">
@@ -110,6 +110,11 @@ export default function Product() {
                   <p className="text-sm font-medium text-gray-900">
                     {product.price}
                   </p>
+                </div>
+                <div className="pt-[5px]">
+                  <button className="w-full bg-[#282828] hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
+                    Ver
+                  </button>
                 </div>
               </div>
             ))}

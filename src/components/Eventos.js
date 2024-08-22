@@ -88,9 +88,9 @@ export default function Example() {
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h1 className="text-center font-bold text-gray-900 text-3xl ">
-          <span className="w-[200px] h-[1px] bg-gray-900 inline-block mr-4"></span>
+          <span className="span w-[200px] h-[1px] bg-gray-900 inline-block mr-4"></span>
           Nuestros Eventos
-          <span className="w-[200px] h-[1px] bg-gray-900 inline-block ml-4"></span>
+          <span className="span w-[200px] h-[1px] bg-gray-900 inline-block ml-4"></span>
         </h1>
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 pt-[90px]">
