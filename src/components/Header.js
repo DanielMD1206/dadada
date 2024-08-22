@@ -1,5 +1,6 @@
-import React from "react";
-import { useState } from "react";
+// src/components/Header.js
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,75 +14,22 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
-const navigation = [
-  {
-    name: (
-      <a
-        href="#"
-        className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150 mt-2 tooltip"
-        data-tooltip="Catalogo"
-      >
-        <FontAwesomeIcon icon={faBagShopping} />
-      </a>
-    ),
-    href: "#",
-  },
-  {
-    name: (
-      <a
-        href="#"
-        className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150 tooltip"
-        data-tooltip="Eventos"
-      >
-        <FontAwesomeIcon icon={faGifts} />
-      </a>
-    ),
-    href: "#",
-  },
-  {
-    name: (
-      <a
-        href="#"
-        className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150 tooltip"
-        data-tooltip="Sobre_Nosotros"
-      >
-        <FontAwesomeIcon icon={faUserGroup} />
-      </a>
-    ),
-    href: "#",
-  },
-  {
-    name: (
-      <a
-        href="#"
-        className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150 tooltip"
-        data-tooltip="Contactenos"
-      >
-        <FontAwesomeIcon icon={faPhone} />
-      </a>
-    ),
-    href: "#",
-  },
-];
-
-export default function Example() {
+export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="bg-white">
       <header className="fixed inset-x-0 top-0 z-50 bg-[#fff]">
-        <nav
-          aria-label="Global"
-          className="flex items-center justify-between p-6 lg:px-8"
-        >
+        <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
                 src="../img/Captura_de_pantalla_2024-08-15_075316-removebg-preview.png"
                 className="h-8 w-auto"
+                alt="Company Logo"
               />
-            </a>
+            </Link>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -94,19 +42,38 @@ export default function Example() {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150"
-              >
-                {item.name}
-              </a>
-            ))}
+            <Link
+              to="/catalogo"
+              className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150"
+            >
+              <FontAwesomeIcon icon={faBagShopping} />
+              <span className="ml-2">Catalogo</span>
+            </Link>
+            <Link
+              to="/eventos"
+              className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150"
+            >
+              <FontAwesomeIcon icon={faGifts} />
+              <span className="ml-2">Eventos</span>
+            </Link>
+            <Link
+              to="/sobre-nosotros"
+              className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150"
+            >
+              <FontAwesomeIcon icon={faUserGroup} />
+              <span className="ml-2">Sobre Nosotros</span>
+            </Link>
+            <Link
+              to="/contactenos"
+              className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150"
+            >
+              <FontAwesomeIcon icon={faPhone} />
+              <span className="ml-2">Contactenos</span>
+            </Link>
           </div>
           <div className="hidden lg:flex text-[#3C474D] lg:flex-1 lg:justify-end hover:text-[#000] transition ease delay-150">
-            <a
-              href="#"
+            <Link
+              to="/registrate"
               className="text-sm font-semibold leading-6 tooltip"
               data-tooltip="Registrate"
             >
@@ -115,25 +82,25 @@ export default function Example() {
                 {" "}
                 <FontAwesomeIcon icon={faArrowRight} />
               </span>
-            </a>
+            </Link>
           </div>
         </nav>
         <Dialog
           open={mobileMenuOpen}
-          onClose={setMobileMenuOpen}
+          onClose={() => setMobileMenuOpen(false)}
           className="lg:hidden"
         >
           <div className="fixed inset-0 z-50" />
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <Link to="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
                 <img
-                  alt=""
+                  alt="Company Logo"
                   src="../img/Captura_de_pantalla_2024-08-15_075316-removebg-preview.png"
                   className="h-8 w-auto"
                 />
-              </a>
+              </Link>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
@@ -146,38 +113,42 @@ export default function Example() {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  <a
-                    href="#"
+                  <Link
+                    to="/catalogo"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    Portafolio
-                  </a>
-                  <a
-                    href="#"
+                    <FontAwesomeIcon icon={faBagShopping} />
+                    <span className="ml-2">Catalogo</span>
+                  </Link>
+                  <Link
+                    to="/eventos"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    Eventos
-                  </a>
-                  <a
-                    href="#"
+                    <FontAwesomeIcon icon={faGifts} />
+                    <span className="ml-2">Eventos</span>
+                  </Link>
+                  <Link
+                    to="/sobre-nosotros"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    Sobre Nosotros
-                  </a>
-                  <a
-                    href="#"
+                    <FontAwesomeIcon icon={faUserGroup} />
+                    <span className="ml-2">Sobre Nosotros</span>
+                  </Link>
+                  <Link
+                    to="/contactenos"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    Contactenos
-                  </a>
+                    <FontAwesomeIcon icon={faPhone} />
+                    <span className="ml-2">Contactenos</span>
+                  </Link>
                 </div>
                 <div className="py-6">
-                  <a
-                    href="#"
+                  <Link
+                    to="/registrate"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Registrate
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
