@@ -1,11 +1,11 @@
-// src/App.js
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Catalogo from "./pages/Catalogo"; // Asegúrate de que la importación sea correcta
+import Catalogo from "./pages/Catalogo"; 
 import Main from "./pages/Main";
 import Evento from "./pages/Evento";
-import AboutUs from "./pages/AboutUs"
+import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/ContactUs";
+import ProductDetail from "./pages/Detalle"
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
           <Route path="/evento" element={<Evento />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
       </main>
     </div>
