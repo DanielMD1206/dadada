@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const HeroSection = () => {
   return (
     <div className="relative bg-cover bg-center h-screen img">
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
+      <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center">
         <h1 className="text-white text-5xl font-bold mb-4">Distribuidora de Flores Yesid</h1>
         <p className="text-white text-xl mb-6 text-center">
           Flores frescas y hermosas para cada ocasión especial.

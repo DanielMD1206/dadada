@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-const EventsHeroSection = () => {
+const EventsHeroSection = () => { 
   return (
     <div className="relative h-screen bg-cover bg-center img">
       <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center">
