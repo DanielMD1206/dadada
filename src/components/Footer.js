@@ -108,7 +108,7 @@ function Footer({ toggleCart }) {
       {/* Botón del Carrito */}
       <button 
         onClick={toggleCart} 
-        className="fixed bottom-4 left-4 bg-[#FFDCF9] text-black p-4 rounded-full shadow-lg hover:bg-[#EFBBE7] "
+        className="fixed bottom-4 left-4 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600"
       >
         <FontAwesomeIcon icon={faShoppingCart} className="h-6 w-6" />
       </button>

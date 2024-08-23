@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import img from "../static/img/pexels-iriser-1408221 (2).jpg"
+import img from "../static/img/pexels-iriser-1408221 (2).jpg";
 
 const products = [
   {
@@ -78,7 +78,7 @@ const products = [
 
 export default function Product() {
   const navigate = useNavigate();
-
+ 
   const handleViewDetails = (id) => {
     navigate(`/product/${id}`);
   };
@@ -118,7 +118,7 @@ export default function Product() {
                 </div>
                 <div className="pt-[5px]">
                   <button
-                    className="w-full bg-[#FFDCF9] text-black py-2 px-4 rounded"
+                    className="w-full bg-green-500 text-white py-2 px-4 rounded transition-transform transform hover:scale-105 hover:bg-green-600"
                     onClick={(e) => {
                       e.stopPropagation();
                       handleViewDetails(product.id);

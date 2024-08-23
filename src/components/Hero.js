@@ -1,17 +1,29 @@
 import React from 'react';
-import img from '../static/img/pexels-anna-romanova-1406375-17887747.jpg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLeaf, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
-function Hero() {
+const HeroSection = () => {
   return (
-    <div className="img h-screen w-full bg-cover bg-center flex items-center justify-center">
-      <div className="text-center p-[30px]">
-        <h1 className="text-4xl text-white font-bold leading-tight">Bienvenido a Yesid, tu distribuidora de flores</h1>
-        <p className="text-lg text-white">Descubre la belleza y la frescura de nuestras flores, seleccionadas con cuidado para ti.</p>
-        <p className="text-lg text-white">En Yesid, nos enfocamos en proporcionar la mejor calidad y variedad de flores, para que puedas disfrutar de la naturaleza en todo su esplendor.</p>
-        <p className="text-lg text-white">Explora nuestra selección de flores frescas, plantas y arreglo de flores, y descubre por qué somos la distribuidora de flores preferida de muchos.</p>
+    <div className="relative bg-cover bg-center h-screen img">
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
+        <h1 className="text-white text-5xl font-bold mb-4">Distribuidora de Flores Yesid</h1>
+        <p className="text-white text-xl mb-6 text-center">
+          Flores frescas y hermosas para cada ocasión especial.
+        </p>
+        <div className="flex space-x-4">
+          <Link to="/about" className="bg-green-500 text-white px-6 py-3 rounded-full flex items-center hover:bg-green-600">
+            <FontAwesomeIcon icon={faLeaf} className="mr-2" />
+            Conócenos
+          </Link>
+          <Link to="/catalogo" className="bg-white text-green-500 px-6 py-3 rounded-full flex items-center hover:bg-gray-200">
+            <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />
+            Compra Ahora
+          </Link>
+        </div>
       </div>
     </div>
   );
-}
+};
 
-export default Hero;
+export default HeroSection;

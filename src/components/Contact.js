@@ -84,7 +84,7 @@ const ContactUs = () => {
           <div className="mb-6">
             <h3 className="text-2xl font-semibold text-gray-800 mb-2">Teléfono</h3>
             <p className="text-lg text-gray-700">
-              +52 123 456 7890
+              +57 3193239281
             </p>
             <p className="text-lg text-gray-700">
               Llámanos durante nuestro horario laboral para consultas urgentes o asistencia inmediata. Nuestro equipo está disponible para responder tus llamadas y proporcionarte la ayuda que necesites.
@@ -93,7 +93,7 @@ const ContactUs = () => {
           <div className="mb-6">
             <h3 className="text-2xl font-semibold text-gray-800 mb-2">Correo Electrónico</h3>
             <p className="text-lg text-gray-700">
-              contacto@yesid.com
+              floresyesid@gmail.com
             </p>
             <p className="text-lg text-gray-700">
               Para consultas generales, sugerencias o cualquier otra comunicación, envíanos un correo electrónico. Nos comprometemos a responder a todos los mensajes en un plazo de 24 a 48 horas.
@@ -102,23 +102,13 @@ const ContactUs = () => {
           <div className="mb-6">
             <h3 className="text-2xl font-semibold text-gray-800 mb-2">Horario de Atención</h3>
             <p className="text-lg text-gray-700">
-              Lunes a Viernes: 9:00 AM - 6:00 PM
+              lunes-sabado : 9:00 AM - 6:00 PM
             </p>
             <p className="text-lg text-gray-700">
               Estamos disponibles durante el horario laboral para asistirte. Si necesitas contactarnos fuera de este horario, por favor, utiliza nuestro formulario de contacto o envía un correo electrónico, y te responderemos a la mayor brevedad posible.
             </p>
           </div>
           <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-2">Encuéntranos en Redes Sociales</h3>
-            <p className="text-lg text-gray-700 mb-4">
-              Síguenos en nuestras redes sociales para estar al tanto de nuestras últimas noticias, promociones y eventos. Te invitamos a interactuar con nosotros y a formar parte de nuestra comunidad en línea.
-            </p>
-            <div className="flex space-x-4">
-              <a href="https://facebook.com/yesid" className="text-blue-600 hover:text-blue-800">Facebook</a>
-              <a href="https://twitter.com/yesid" className="text-blue-400 hover:text-blue-600">Twitter</a>
-              <a href="https://instagram.com/yesid" className="text-pink-500 hover:text-pink-700">Instagram</a>
-              <a href="https://linkedin.com/company/yesid" className="text-blue-700 hover:text-blue-900">LinkedIn</a>
-            </div>
           </div>
         </div>
       </div>
