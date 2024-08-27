@@ -84,43 +84,6 @@ const About = () => {
             </div>
           </div>
         </section>
-
-        {/* Testimonios */}
-        <section className="text-center mb-12">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">Lo Que Dicen Nuestros Clientes</h2>
-          <div className="flex flex-col items-center space-y-8">
-            <blockquote className="bg-white p-6 rounded-lg shadow-lg max-w-lg mx-auto">
-              <p className="text-gray-600 mb-4">
-                "Yesid hizo que nuestro evento fuera inolvidable. Las flores eran absolutamente hermosas y el servicio
-                fue excepcional. ¡Definitivamente volveremos a comprar aquí!"
-              </p>
-              <footer className="text-gray-800">
-                <p className="font-semibold">Laura y Juan</p>
-                <p className="text-gray-500">Clientes Felices</p>
-              </footer>
-            </blockquote>
-            <blockquote className="bg-white p-6 rounded-lg shadow-lg max-w-lg mx-auto">
-              <p className="text-gray-600 mb-4">
-                "La calidad de las flores de Yesid es insuperable. Siempre puedo contar con ellos para obtener los
-                mejores arreglos para cualquier ocasión."
-              </p>
-              <footer className="text-gray-800">
-                <p className="font-semibold">Carlos R.</p>
-                <p className="text-gray-500">Cliente Regular</p>
-              </footer>
-            </blockquote>
-            <blockquote className="bg-white p-6 rounded-lg shadow-lg max-w-lg mx-auto">
-              <p className="text-gray-600 mb-4">
-                "Desde que descubrimos Yesid, no hemos buscado en ningún otro lugar. La variedad, calidad y servicio
-                son simplemente excepcionales."
-              </p>
-              <footer className="text-gray-800">
-                <p className="font-semibold">Ana M.</p>
-                <p className="text-gray-500">Cliente Fiel</p>
-              </footer>
-            </blockquote>
-          </div>
-        </section>
       </div>
     </div>
   );

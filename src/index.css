@@ -36,3 +36,11 @@ body::-webkit-scrollbar{
 .img{
   background-image: url('/src/static/img/pexels-iriser-1408221\ \(2\).jpg');
 }
+
+.login{
+  background-image: url('/src/static//img/pexels-iriser-1408221\ \(2\).jpg');
+}
+
+.register{
+  background-image: url('/src/static/img/pexels-iriser-1408221\ \(2\).jpg');
+}

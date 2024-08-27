@@ -7,6 +7,8 @@ import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/ContactUs";
 import ProductDetail from "./pages/Detalle"
 import EventDetail from "./pages/DetalleEventos";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 
 function App() {
@@ -20,7 +22,10 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/evento/:id" element={<EventDetail />} /> 
+          <Route path="/evento/:id" element={<EventDetail />} /> 
+          <Route path="/login" element={<Login />} />
+          <Route path="/registrate" element={<Register />} />
+
         </Routes>
       </main>
     </div>

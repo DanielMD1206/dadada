@@ -5,7 +5,6 @@ import Product from '../components/Product';
 import Footer from '../components/Footer';
 import Eventos from '../components/Eventos';
 import CartModal from '../components/CartModal';
-import Contact from '../components/Contact'
 
 function Main() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -20,7 +19,6 @@ function Main() {
       <Hero />
       <Product />
       <Eventos />
-      <Contact />
       <Footer toggleCart={toggleCart} />
       <CartModal isOpen={isCartOpen} toggleCart={toggleCart} />
     </div>
