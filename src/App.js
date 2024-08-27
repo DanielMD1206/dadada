@@ -9,7 +9,7 @@ import ProductDetail from "./pages/Detalle"
 import EventDetail from "./pages/DetalleEventos";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-
+import AdminHeroSection from './pages/AdminV';
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
           <Route path="/evento/:id" element={<EventDetail />} /> 
           <Route path="/login" element={<Login />} />
           <Route path="/registrate" element={<Register />} />
-
+          <Route path="/Admin" element={<AdminHeroSection />} /> 
         </Routes>
       </main>
     </div>

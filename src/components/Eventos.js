@@ -76,7 +76,7 @@ export default function Eventos() {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-gray-50">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h1 className="text-center font-bold text-gray-900 text-3xl">
           <span className="span w-[200px] h-[1px] bg-gray-900 inline-block mr-4"></span>
@@ -99,7 +99,7 @@ export default function Eventos() {
                 {event.price}
               </p>
               <button
-                className="mt-4 w-full text-black bg-[#FFDCF9] hover:bg-[#FFB4F3] transition ease delay-150 py-2 px-4 rounded-lg transition-transform transform hover:scale-105 transition ease-in-out duration-300"
+                className="mt-4 w-full text-black bg-gray-50  hover:bg-[#D6D6D6] py-2 px-4 rounded-lg transition ease-in-out duration-300"
                 onClick={(e) => {
                   e.stopPropagation();
                   handleViewDetails(event.id);

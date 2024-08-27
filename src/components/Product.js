@@ -84,13 +84,13 @@ export default function Product() {
   };
 
   return (
-    <div className="products pt-[90px]">
+    <div className="products pt-[6%] bg-gray-50 ">
       <h1 className="text-center font-bold text-gray-900 text-3xl">
-        <span className="span w-[200px] h-[1px] bg-gray-900 inline-block mr-4"></span>
+        <span className="span w-[200px] h-[1px] bg-gray-900 inline-block mr-4 "></span>
             Nuestros Productos
         <span className="span w-[200px] h-[1px] bg-gray-900 inline-block ml-4"></span>
       </h1>
-      <div className="bg-white">
+      <div className="bg-gray-50 ">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6  lg:max-w-7xl lg:px-8">
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {products.map((product) => (
@@ -118,7 +118,7 @@ export default function Product() {
                 </div>
                 <div className="pt-[5px]">
                   <button
-                    className="w-full bg-[#FFDCF9] transition ease delay-150 text-black py-2 px-4 rounded transition-transform transform hover:scale-105 hover:bg-[#FFB4F3] duration-300"
+                    className="w-full bg-gray-50  text-black py-2 px-4 rounded transform hover:bg-[#D6D6D6] transition ease-in-out duration-300"
                     onClick={(e) => {
                       e.stopPropagation();
                       handleViewDetails(product.id);
@@ -126,7 +126,7 @@ export default function Product() {
                   >
                     Ver
                   </button>
-                </div>
+                </div> 
               </div>
             ))}
           </div>

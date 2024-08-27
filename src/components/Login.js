@@ -46,7 +46,7 @@ export default function Login() {
           <p className="mt-4 text-sm text-gray-600">
             ¿No tienes una cuenta? <Link to="/registrate" className="text-[#FFDCF9] transition duration-300 ease-in-out hover:underline">Regístrate</Link>
           </p>
-        </form>
+        </form> 
       </div>
     </div>
   );
