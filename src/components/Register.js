@@ -1,158 +1,104 @@
-import React, { useState } from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../index.css';
+import Header from './HeaderR';
 
-export default function Register() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [documentType, setDocumentType] = useState("");
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [phone, setPhone] = useState("");
-  const [acceptedTerms, setAcceptedTerms] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (password !== confirmPassword) {
-      // Manejar el error de coincidencia de contraseñas
-      return;
-    }
-    if (!acceptedTerms) {
-      // Manejar el error si no se aceptaron los términos
-      return;
-    }
-    // Implementar la lógica de registro aquí
-  };
-
+const Register = () => {
   return (
-    <div className="register flex items-center justify-center bg-gray-100 py-[10%] relative bg-cover bg-center">
-      <div className="w-full max-w-md p-8 bg-white shadow-lg rounded-lg">
-        <h2 className="text-2xl font-semibold mb-4">Regístrate</h2>
-        <form onSubmit={handleSubmit}>
-          {/* Acordeón para el tipo de documento */}
-          <div className="mb-4">
-            <label htmlFor="document-type" className="block text-sm font-medium text-gray-700">
-              Tipo de Documento
-            </label>
-            <select
-              id="document-type"
-              value={documentType}
-              onChange={(e) => setDocumentType(e.target.value)}
-              required
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
-            >
-              <option value="" disabled>Selecciona un tipo de documento</option>
-              <option value="cc">Cédula de Ciudadanía</option>
-              <option value="nit">NIT</option>
-              <option value="pasaporte">Pasaporte</option>
-              {/* Agrega más opciones según sea necesario */}
-            </select>
-          </div>
+    <div className="body1">
+      <Header/>
+      <div className="wrapper2">
+        <div className="form-box1 login">
+          <h2>Crear Cuenta</h2>
+          <form action="#" className="for">
 
-          {/* Campo para el nombre */}
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Nombre</label>
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
-            />
-          </div>
+            <div className="input-box1">
+              <label htmlFor="documentType">Tipo de Documento</label>
+              <div className="input-wrapper2">
+                <span className="icon"><ion-icon name="document-text-outline"></ion-icon></span>
+                <select id="documentType" required>
+                  <option value="">Seleccione el tipo de documento</option>
+                  <option value="CC">Cédula de Ciudadanía</option>
+                  <option value="TI">Tarjeta de Identidad</option>
+                  <option value="CE">Cédula de Extranjería</option>
+                  <option value="PP">Pasaporte</option>
+                </select>
+              </div>
+            </div>
 
-          {/* Campo para el correo electrónico */}
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Correo Electrónico</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
-            />
-          </div>
+            <div className="input-box1">
+              <label htmlFor="documentNumber">Número de Documento</label>
+              <div className="input-wrapper2">
+                <span className="icon"><ion-icon name="barcode-outline"></ion-icon></span>
+                <input type="text" id="documentNumber" placeholder="Ingrese su número de documento aquí:" required />
+              </div>
+            </div>
 
-          {/* Campo para la dirección */}
-          <div className="mb-4">
-            <label htmlFor="address" className="block text-sm font-medium text-gray-700">Dirección</label>
-            <input
-              type="text"
-              id="address"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              required
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
-            />
-          </div>
+            <div className="input-box1">
+              <label htmlFor="name">Nombre</label>
+              <div className="input-wrapper2">
+                <span className="icon"><ion-icon name="person-outline"></ion-icon></span>
+                <input type="text" id="name" placeholder="Ingrese su nombre aquí:" required />
+              </div>
+            </div>
 
-          {/* Campo para el teléfono */}
-          <div className="mb-4">
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Teléfono</label>
-            <input
-              type="tel"
-              id="phone"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              required
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
-            />
-          </div>
+            <div className="input-box1">
+              <label htmlFor="lastName">Apellido</label>
+              <div className="input-wrapper2">
+                <span className="icon"><ion-icon name="person-outline"></ion-icon></span>
+                <input type="text" id="lastName" placeholder="Ingrese su apellido aquí:" required />
+              </div>
+            </div>
 
-          {/* Campo para la contraseña */}
-          <div className="mb-4">
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">Contraseña</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
-            />
-          </div>
+            <div className="input-box1">
+              <label htmlFor="address">Dirección</label>
+              <div className="input-wrapper2">
+                <span className="icon"><ion-icon name="home-outline"></ion-icon></span>
+                <input type="text" id="address" placeholder="Ingrese su dirección aquí:" required />
+              </div>
+            </div>
 
-          {/* Campo para confirmar la contraseña */}
-          <div className="mb-4">
-            <label htmlFor="confirm-password" className="block text-sm font-medium text-gray-700">Confirmar Contraseña</label>
-            <input
-              type="password"
-              id="confirm-password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
-            />
-          </div>
+            <div className="input-box1">
+              <label htmlFor="phone">Teléfono</label>
+              <div className="input-wrapper2">
+                <span className="icon"><ion-icon name="call-outline"></ion-icon></span>
+                <input type="tel" id="phone" placeholder="Ingrese su teléfono aquí:" required />
+              </div>
+            </div>
 
-          {/* Aceptación de términos y condiciones */}
-          <div className="mb-4 flex items-center">
-            <input
-              type="checkbox"
-              id="terms"
-              checked={acceptedTerms}
-              onChange={() => setAcceptedTerms(!acceptedTerms)}
-              required
-              className="mr-2 h-4 w-4 border-gray-300 rounded"
-            />
-            <label htmlFor="terms" className="text-sm text-gray-600">
-              He leído y acepto los <a href="/terminos" className="text-[#FFB4F3] transition duration-300 ease-in-out hover:underline">términos y condiciones</a>
-            </label>
-          </div>
+            <div className="input-box1">
+              <label htmlFor="email">Correo</label>
+              <div className="input-wrapper2">
+                <span className="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                <input type="email" id="email" placeholder="Ingrese su correo aquí:" required />
+              </div>
+            </div>
 
-          {/* Botón de registro */}
-          <button
-            type="submit"
-            className="w-full py-2 px-4 bg-[#FFDCF9] text-black font-semibold rounded-md shadow-sm hover:bg-[#FFB4F3] transition duration-300 ease-in-out"
-          >
-            Regístrate
-          </button>
-          <p className="mt-4 text-sm text-gray-600">
-            ¿Ya tienes una cuenta? <a href="/login" className="text-[#FFDCF9] transition duration-300 ease-in-out hover:underline">Inicia sesión</a>
-          </p>
-        </form>
+            <div className="input-box1">
+              <label htmlFor="password">Contraseña</label>
+              <div className="input-wrapper2">
+                <span className="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input type="password" id="password" placeholder="Ingrese su contraseña aquí:" required />
+              </div>
+            </div>
+
+            <div className="input-box1">
+              <label htmlFor="confirmPassword">Confirmación de contraseña</label>
+              <div className="input-wrapper2">
+                <span className="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input type="password" id="confirmPassword" placeholder="Confirme su contraseña aquí:" required />
+              </div>
+            </div>
+
+            <button type="submit" className="btn0">Crear Cuenta</button>
+            <div className="login-registerr">
+              <p>¿Ya tiene una cuenta? <Link to="/login" className="login-registerr">Iniciar sesión</Link></p>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default Register;

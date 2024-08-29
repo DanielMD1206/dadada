@@ -12,7 +12,7 @@ const HeroSection = () => {
           Flores frescas y hermosas para cada ocasión especial.
         </p>
         <div className="flex space-x-4">
-          <Link to="/about" className=" bg-[#252525] transition duration-300 ease-in-out text-white px-6 py-3 rounded-full flex items-center hover:bg-[#1E1E1E] ">
+          <Link to="/about" className=" bg-[#FFDCF9] transition duration-300 ease-in-out text-black px-6 py-3 rounded-full flex items-center hover:bg-[#FDABF0] ">
             <FontAwesomeIcon icon={faLeaf} className="mr-2" />
             Conócenos
           </Link>

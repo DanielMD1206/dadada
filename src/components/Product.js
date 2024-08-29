@@ -118,7 +118,7 @@ export default function Product() {
                 </div>
                 <div className="pt-[5px]">
                   <button
-                    className="w-full bg-gray-50  text-black py-2 px-4 rounded transform hover:bg-[#D6D6D6] transition ease-in-out duration-300"
+                    className="w-full bg-gray-50  text-black py-2 px-4 rounded transform hover:bg-[#FDABF0] transition ease-in-out duration-300"
                     onClick={(e) => {
                       e.stopPropagation();
                       handleViewDetails(product.id);

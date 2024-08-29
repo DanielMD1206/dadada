@@ -1,17 +1,16 @@
+// src/components/Header.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRight,
-  faBagShopping,
   faBars,
-  faGifts,
   faUser,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function HeaderV() {
+export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -22,8 +21,8 @@ export default function HeaderV() {
             <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
-                src="../img/Captura_de_pantalla_2024-08-15_075316-removebg-preview.png"
-                className="h-8 w-auto"
+                src="../img/Logo.png"
+                className="h-12 w-auto"
                 alt="Company Logo"
               />
             </Link>
@@ -38,27 +37,11 @@ export default function HeaderV() {
               <FontAwesomeIcon icon={faBars} />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12">
-            <Link
-              to="/orders"
-              className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150"
-            >
-              <FontAwesomeIcon icon={faBagShopping} />
-              <span className="ml-2">Pedidos</span>
-            </Link>
-            <Link
-              to="/prod"
-              className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150"
-            >
-              <FontAwesomeIcon icon={faGifts} />
-              <span className="ml-2">Productos</span>
-            </Link>
-          </div>
           <div className="hidden lg:flex text-[#3C474D] lg:flex-1 lg:justify-end hover:text-[#000] transition ease delay-150">
             <Link
-              to="/"
+              to="../seller"
               className="text-sm font-semibold leading-6 tooltip"
-              data-tooltip="Cerrar_sesion"
+              data-tooltip="Salir"
             >
               <FontAwesomeIcon icon={faUser} />
               <span aria-hidden="true">
@@ -95,21 +78,12 @@ export default function HeaderV() {
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
+                <div className="py-6">
                   <Link
-                    to={`/vendedor/pedidos/123`} // Reemplaza `123` con el ID real del pedido
-                    className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150"
-                  >
-                    <FontAwesomeIcon icon={faBagShopping} />
-                    <span className="ml-2">Pedidos</span>
-                  </Link>
-
-                  <Link
-                    to="/vendedor/productos"
+                    to="/main"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    <FontAwesomeIcon icon={faGifts} />
-                    <span className="ml-2">Productos</span>
+                    Salir
                   </Link>
                 </div>
               </div>

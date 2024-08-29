@@ -20,7 +20,7 @@ function Footer({ toggleCart }) {
         <div className="p-5">
           <ul>
             <p className="text-gray-800 font-bold text-3xl pb-6">
-              Nuestras<span className="text-[#FFDCF9]"> Redes</span>
+              Nuestras<span className="text-[#FF87EC]"> Redes</span>
             </p>
             <div className="flex gap-6 pb-5">
               <FontAwesomeIcon

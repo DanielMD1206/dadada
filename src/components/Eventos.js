@@ -99,7 +99,7 @@ export default function Eventos() {
                 {event.price}
               </p>
               <button
-                className="mt-4 w-full text-black bg-gray-50  hover:bg-[#D6D6D6] py-2 px-4 rounded-lg transition ease-in-out duration-300"
+                className="mt-4 w-full text-black bg-gray-50  hover:bg-[#FDABF0] py-2 px-4 rounded-lg transition ease-in-out duration-300"
                 onClick={(e) => {
                   e.stopPropagation();
                   handleViewDetails(event.id);

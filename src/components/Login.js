@@ -1,53 +1,66 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../index.css';
+import Header from './HeaderL';
 
-export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Implementar la lógica de inicio de sesión aquí
-  };
-
+const Login = () => {
   return (
-    <div className="login flex items-center justify-center bg-gray-100 relative h-screen bg-cover bg-center">
-      <div className="w-full max-w-md p-8 bg-white shadow-lg rounded-lg">
-        <h2 className="text-2xl font-semibold mb-4">Iniciar Sesión</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Correo Electrónico</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">Contraseña</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full py-2 px-4 bg-[#FFDCF9] text-black font-semibold rounded-md shadow-sm hover:bg-[#FFB4F3] transition duration-300 ease-in-out"
-          >
-            Iniciar Sesión
-          </button>
-          <p className="mt-4 text-sm text-gray-600">
-            ¿No tienes una cuenta? <Link to="/registrate" className="text-[#FFDCF9] transition duration-300 ease-in-out hover:underline">Regístrate</Link>
-          </p>
-        </form> 
+    <div className="body1">
+      <Header />
+      <div className="wrapper2">
+        <div className="form-box1 login">
+          <h2>Iniciar Sesión</h2>
+          <form action="#" className="for">
+            <div className="input-box1">
+              <label htmlFor="email">Correo</label>
+              <div className="input-wrapper2">
+                <span className="icon">
+                  <ion-icon name="mail-outline"></ion-icon>
+                </span>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Ingrese su correo aquí:"
+                  required
+                />
+              </div>
+            </div>
+            <div className="input-box1">
+              <label htmlFor="password">Contraseña</label>
+              <div className="input-wrapper2">
+                <span className="icon">
+                  <ion-icon name="lock-closed-outline"></ion-icon>
+                </span>
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Ingrese su contraseña aquí:"
+                  required
+                />
+              </div>
+            </div>
+            <div className="remember-forgot3">
+              <label className="remember-me">
+                <input type="checkbox" /> Recordar contraseña
+              </label>
+              <Link to="#">¿Olvidó su contraseña?</Link>
+            </div>
+            <button type="submit" className="btn0">
+              Iniciar sesión
+            </button>
+            <div className="login-registerr">
+              <p>
+                ¿No tiene una cuenta?{' '}
+                <Link to="/registrate" className="register-link">
+                  Registrarse
+                </Link>
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default Login;
