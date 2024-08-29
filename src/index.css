@@ -2,44 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  box-sizing: border-box
+* {
+    box-sizing: border-box
 }
-body::-webkit-scrollbar{
-  width: 0px;
+
+body::-webkit-scrollbar {
+    width: 0px;
 }
 
 .tooltip {
-  @apply relative;
+    @apply relative;
 }
 
 .tooltip::after {
-  @apply absolute bg-gray-100 text-gray-600 py-1 px-2 rounded text-xs;
-  content: attr(data-tooltip);
-  top: 150%;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s;
+    @apply absolute bg-gray-100 text-gray-600 py-1 px-2 rounded text-xs;
+    content: attr(data-tooltip);
+    top: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
 .tooltip:hover::after {
-  @apply opacity-100;
+    @apply opacity-100;
 }
 
-@media screen and (max-width: 720px){
-  .span{
-    display: none;
-  }
+@media screen and (max-width: 720px) {
+    .span {
+        display: none;
+    }
 }
 
-.img{
-  background-image: url('/src/static/img/pexels-iriser-1408221\ \(2\).jpg');
+.img {
+    background-image: url('/src/static/img/pexels-iriser-1408221\ \(2\).jpg');
 }
 
-.register{
-  background-image: url('/src/static/img/pexels-iriser-1408221\ \(2\).jpg');
+.register {
+    background-image: url('/src/static/img/pexels-iriser-1408221\ \(2\).jpg');
 }
+
+.input-wrapper2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-toggle {
+    position: absolute;
+    right: -12px;
+    top: -4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 10px ;
+}
+
+.password-toggle:focus {
+    outline: none;
+}
+
 
 .body1 {
     display: flex;
@@ -57,7 +79,8 @@ body::-webkit-scrollbar{
     position: fixed;
     top: 0;
     width: 100%;
-    height: -2px;;
+    height: -2px;
+    ;
     background: rgb(255, 216, 238);
     display: flex;
     justify-content: space-between;
@@ -71,7 +94,7 @@ body::-webkit-scrollbar{
     padding-left: 40px;
 }
 
-.logo-text{
+.logo-text {
     font-size: 25px;
     color: #000000;
     padding: 35px 0px;
@@ -131,11 +154,11 @@ a:nth-child(1):hover~.animation1 {
     left: 10px;
 }
 
-.gota .text{
+.gota .text {
     color: #fff;
 }
 
-.for{
+.for {
     display: contents;
 }
 
@@ -192,7 +215,7 @@ a:nth-child(1):hover~.animation1 {
 }
 
 .input-wrapper2 input {
-    width: 100%; 
+    width: 100%;
     height: 40px;
     background: transparent;
     border: 2px solid black;
@@ -252,7 +275,8 @@ a:nth-child(1):hover~.animation1 {
     color: #fff;
     font-weight: 400;
     display: block;
-    margin: 0 auto; /* Centrar el botón */
+    margin: 0 auto;
+    /* Centrar el botón */
 }
 
 .login-registerr {
@@ -286,10 +310,10 @@ a:nth-child(1):hover~.animation1 {
     padding-left: 30px;
 }
 
-.logo-text1{
+.logo-text1 {
     font-size: 24px;
     color: #000000;
-    padding-top: 35px   ;
+    padding-top: 35px;
 
 }
 
@@ -368,7 +392,7 @@ a:nth-child(1):hover~.animation1 {
     left: 210px;
 }
 
-.gota1 .text{
+.gota1 .text {
     color: #fff;
 }
 
@@ -386,10 +410,10 @@ a:nth-child(1):hover~.animation1 {
     padding-left: 30px;
 }
 
-.logo-text2{
+.logo-text2 {
     font-size: 24px;
     color: #000000;
-    padding-top: 35px   ;
+    padding-top: 35px;
 
 }
 
@@ -464,7 +488,7 @@ a:nth-child(1):hover~.animation2 {
     left: 235px;
 }
 
-.gota2 .text{
+.gota2 .text {
     color: #fff;
 }
 
@@ -828,10 +852,10 @@ a:nth-child(1):hover~.animation2 {
     padding-left: 30px;
 }
 
-.logo-text4{
+.logo-text4 {
     font-size: 24px;
     color: #000000;
-    padding-top: 35px   ;
+    padding-top: 35px;
 
 }
 
@@ -906,7 +930,7 @@ a:nth-child(1):hover~.animation4 {
     left: 250px;
 }
 
-.gota4 .text{
+.gota4 .text {
     color: #fff;
 }
 
@@ -1326,7 +1350,7 @@ a:nth-child(1):hover~.animation4 {
     overflow: hidden;
 }
 
-.p31{
+.p31 {
     width: 624px;
     height: 400px;
     background: rgba(247, 247, 247, 1);
@@ -1823,7 +1847,7 @@ a:nth-child(1):hover~.animation4 {
     padding-left: 30px;
 }
 
-.logo-text5{
+.logo-text5 {
     font-size: 24px;
     color: #000000;
     padding-top: 35px;
@@ -1883,7 +1907,7 @@ a:nth-child(1):hover~.animation5 {
     left: 28px;
 }
 
-.gota5 .text{
+.gota5 .text {
     color: #fff;
 }
 
@@ -2001,10 +2025,10 @@ button .b4 {
     padding-left: 30px;
 }
 
-.logo-text6{
+.logo-text6 {
     font-size: 24px;
     color: #000000;
-    padding-top: 35px   ;
+    padding-top: 35px;
 
 }
 
@@ -2079,7 +2103,7 @@ a:nth-child(1):hover~.animation6 {
     left: 250px;
 }
 
-.gota6 .text{
+.gota6 .text {
     color: #fff;
 }
 
@@ -3012,10 +3036,10 @@ a:nth-child(1):hover~.animation6 {
     padding-left: 30px;
 }
 
-.logo-text7{
+.logo-text7 {
     font-size: 24px;
     color: #000000;
-    padding-top: 35px   ;
+    padding-top: 35px;
 
 }
 
@@ -3090,7 +3114,7 @@ a:nth-child(1):hover~.animation7 {
     left: 210px;
 }
 
-.gota7 .text{
+.gota7 .text {
     color: #fff;
 }
 
@@ -3229,10 +3253,10 @@ th {
     padding-left: 30px;
 }
 
-.logo-text8{
+.logo-text8 {
     font-size: 24px;
     color: #000000;
-    padding-top: 35px   ;
+    padding-top: 35px;
 
 }
 
@@ -3289,7 +3313,7 @@ a:nth-child(1):hover~.animation8 {
     left: 25px;
 }
 
-.gota8 .text{
+.gota8 .text {
     color: #fff;
 }
 
@@ -3346,11 +3370,12 @@ label {
     margin-top: 10px;
 }
 
-.input8  {
+.input8 {
     width: 100%;
 }
 
-.input8, textarea {
+.input8,
+textarea {
     padding: 10px 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
@@ -3394,13 +3419,13 @@ button .icon {
 }
 
 .note-input {
-    width: 100%; 
+    width: 100%;
     margin-bottom: 10px;
 }
 
 /**/
 
-.fa{
+.fa {
     color: rgb(255, 216, 238);
 }
 
@@ -3438,4 +3463,3 @@ button .icon {
     justify-content: center;
     align-items: center;
 }
- 

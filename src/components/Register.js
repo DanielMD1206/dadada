@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../index.css';
 import Header from './HeaderR';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const Register = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
+
   return (
     <div className="body1">
-      <Header/>
+      <Header />
       <div className="wrapper2">
         <div className="form-box1 login">
           <h2>Crear Cuenta</h2>
           <form action="#" className="for">
-
             <div className="input-box1">
               <label htmlFor="documentType">Tipo de Documento</label>
               <div className="input-wrapper2">
@@ -78,7 +90,19 @@ const Register = () => {
               <label htmlFor="password">Contraseña</label>
               <div className="input-wrapper2">
                 <span className="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                <input type="password" id="password" placeholder="Ingrese su contraseña aquí:" required />
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  id="password"
+                  placeholder="Ingrese su contraseña aquí:"
+                  required
+                />
+                <button
+                  type="button"
+                  className="password-toggle"
+                  onClick={togglePasswordVisibility}
+                >
+                  <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                </button>
               </div>
             </div>
 
@@ -86,7 +110,19 @@ const Register = () => {
               <label htmlFor="confirmPassword">Confirmación de contraseña</label>
               <div className="input-wrapper2">
                 <span className="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                <input type="password" id="confirmPassword" placeholder="Confirme su contraseña aquí:" required />
+                <input
+                  type={showConfirmPassword ? 'text' : 'password'}
+                  id="confirmPassword"
+                  placeholder="Confirme su contraseña aquí:"
+                  required
+                />
+                <button
+                  type="button"
+                  className="password-toggle"
+                  onClick={toggleConfirmPasswordVisibility}
+                >
+                  <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
+                </button>
               </div>
             </div>
 
