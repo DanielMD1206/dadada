@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Contact from '../components/Contact'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import CartModal from '../components/CartModal'
 
 function ContactUs() {
+
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
+
   return (
     <div>
       <Header />
       <Contact />
-      <Footer />
+      <Footer toggleCart={toggleCart} />
+      <CartModal isOpen={isCartOpen} toggleCart={toggleCart} />
     </div>
   )
 }

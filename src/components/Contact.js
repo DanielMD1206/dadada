@@ -17,7 +17,7 @@ const ContactUs = () => {
           <div className="mb-6">
             <h3 className="text-2xl font-semibold text-gray-800 mb-2">Dirección</h3>
             <p className="text-lg text-gray-700">
-              Calle Falsa 123, Bogota , Colombia
+              Barrio siete trojes sector los pinos-Funza
             </p>
             <p className="text-lg text-gray-700">
               Nuestro centro de atención está ubicado en el corazón de la ciudad, cerca de diversos puntos de interés. Si planeas visitarnos, te recomendamos que te pongas en contacto con nosotros primero para coordinar tu visita.
@@ -26,7 +26,7 @@ const ContactUs = () => {
           <div className="mb-6">
             <h3 className="text-2xl font-semibold text-gray-800 mb-2">Teléfono</h3>
             <p className="text-lg text-gray-700">
-              +57 3193239281
+              +57 322 2118028
             </p>
             <p className="text-lg text-gray-700">
               Llámanos durante nuestro horario laboral para consultas urgentes o asistencia inmediata. Nuestro equipo está disponible para responder tus llamadas y proporcionarte la ayuda que necesites.
@@ -35,7 +35,7 @@ const ContactUs = () => {
           <div className="mb-6">
             <h3 className="text-2xl font-semibold text-gray-800 mb-2">Correo Electrónico</h3>
             <p className="text-lg text-gray-700">
-              floresyesid@gmail.com
+              mary.luzgomez@hotmail.com
             </p>
             <p className="text-lg text-gray-700">
               Para consultas generales, sugerencias o cualquier otra comunicación, envíanos un correo electrónico. Nos comprometemos a responder a todos los mensajes en un plazo de 24 a 48 horas.
@@ -44,7 +44,7 @@ const ContactUs = () => {
           <div className="mb-6">
             <h3 className="text-2xl font-semibold text-gray-800 mb-2">Horario de Atención</h3>
             <p className="text-lg text-gray-700">
-              lunes-sabado : 9:00 AM - 6:00 PM
+              lunes-sabado : 2:00 AM - 2:00 PM
             </p>
             <p className="text-lg text-gray-700">
               Estamos disponibles durante el horario laboral para asistirte. Si necesitas contactarnos fuera de este horario, por favor, utiliza nuestro formulario de contacto o envía un correo electrónico, y te responderemos a la mayor brevedad posible.

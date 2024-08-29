@@ -47,7 +47,7 @@ const About = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
+            <div className="bg-[#FFDCF9] p-6 rounded-lg shadow-lg"> 
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Calidad</h3>
               <p className="text-gray-600">
                 Solo trabajamos con flores frescas y de la más alta calidad, seleccionadas cuidadosamente para garantizar
@@ -61,7 +61,7 @@ const About = () => {
                 comprometido a brindar la mejor experiencia posible.
               </p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
+            <div className="bg-[#FFDCF9] p-6 rounded-lg shadow-lg">
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Innovación</h3>
               <p className="text-gray-600">
                 Siempre estamos buscando nuevas formas de sorprender y deleitar a nuestros clientes con arreglos
@@ -75,7 +75,7 @@ const About = () => {
                 impacto ambiental y promuevan la responsabilidad ecológica.
               </p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
+            <div className="bg-[#FFDCF9] p-6 rounded-lg shadow-lg">
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Servicio al Cliente</h3>
               <p className="text-gray-600">
                 Nuestro equipo está siempre disponible para atender cualquier consulta o necesidad. Valoramos la

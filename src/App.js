@@ -20,6 +20,8 @@ import UpdateDeliveryPerson from './pages/updatedomi';
 import DeleteCourier from './pages/deletedom';
 import Clients from './pages/crudcli';
 import AddDeliveryPerson from './pages/adddomi';
+import TerminsAndConditions from "./components/TerminsAndConditions";
+import PolityPrivacity from "./components/PolityPrivacity";
 
 function App() {
   return (
@@ -46,6 +48,8 @@ function App() {
           <Route path="/deletedom" element={<DeleteCourier />} />
           <Route path="/crudli" element={<Clients />} /> 
           <Route path="/adddomi" element={<AddDeliveryPerson />} />
+          <Route path="/terminos" element={<TerminsAndConditions />} />
+          <Route path="/privacy-policy" element={<PolityPrivacity />} />
         </Routes>
       </main>
     </div>

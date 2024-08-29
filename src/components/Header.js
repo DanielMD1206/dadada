@@ -25,11 +25,14 @@ export default function Header() {
             <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
-                src="../img/Logo.png"
+                src="../img/Logo copy.png"
                 className="h-12 w-auto"
                 alt="Company Logo"
               />
             </Link>
+            <p className="pt-[11px] pl-2 font-semibold">
+              Distribuidora de Flores Yesid
+            </p>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -97,7 +100,7 @@ export default function Header() {
                 <span className="sr-only">Your Company</span>
                 <img
                   alt="Company Logo"
-                  src="../img/Captura_de_pantalla_2024-08-15_075316-removebg-preview.png"
+                  src="../img/Logo copy.png"
                   className="h-8 w-auto"
                 />
               </Link>

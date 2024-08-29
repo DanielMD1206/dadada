@@ -62,7 +62,7 @@ const DeleteProduct = () => {
           </button>
 
           <div className="b5">
-            <button type="submit" id="deleteButton" className="b6" onClick={handleDelete}>
+            <button type="submit" id="deleteButton" className="b6 text-black" onClick={handleDelete}>
               Eliminar
             </button>
             <button

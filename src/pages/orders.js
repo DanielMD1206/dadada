@@ -21,7 +21,7 @@ const Orders = () => {
           <div className="v6">
             <div className="v7">
               <div className="img3">
-                <img style={{ height: '470px', width: '100%' }} src="../img/pedido.jpeg" alt="" />
+                <img style={{ height: '476px', width: '100%' }} src="../img/pedido.jpeg" alt="" />
               </div>
             </div>
           </div>

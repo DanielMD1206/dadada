@@ -1,12 +1,16 @@
 import { useNavigate } from 'react-router-dom';
-import img from "../static/img/pexels-iriser-1408221 (2).jpg";
+import img from "../static/img/unnamed (5).jpg";
+import img1 from "../static/img/unnamed (3).jpg"
+import img2 from "../static/img/unnamed (4).jpg"
+import img3 from "../static/img/unnamed (6).jpg"
+import img4 from "../static/img/unnamed (9).jpg"
+import img5 from "../static/img/unnamed (11).jpg"
 
 const events = [
   {
     id: 1,
     name: "Earthen Bottle",
     href: "/evento/1",
-    price: "$48",
     imageSrc: img,
     imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
   },
@@ -14,16 +18,14 @@ const events = [
     id: 2,
     name: "Earthen Bottle",
     href: "/evento/1",
-    price: "$48",
-    imageSrc: img,
+    imageSrc: img1,
     imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
   },
   {
     id: 3,
     name: "Earthen Bottle",
     href: "/evento/1",
-    price: "$48",
-    imageSrc: img,
+    imageSrc: img2,
     imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
   },
   {
@@ -31,7 +33,7 @@ const events = [
     name: "Earthen Bottle",
     href: "/evento/1",
     price: "$48",
-    imageSrc: img,
+    imageSrc: img3,
     imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
   },
   {
@@ -39,31 +41,14 @@ const events = [
     name: "Earthen Bottle",
     href: "/evento/1",
     price: "$48",
-    imageSrc: img,
+    imageSrc: img4  ,
     imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
   },
   {
     id: 6,
     name: "Earthen Bottle",
     href: "/evento/1",
-    price: "$48",
-    imageSrc: img,
-    imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
-  },
-  {
-    id: 7,
-    name: "Earthen Bottle",
-    href: "/evento/1",
-    price: "$48",
-    imageSrc: img,
-    imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
-  },
-  {
-    id: 8,
-    name: "Earthen Bottle",
-    href: "/evento/1",
-    price: "$48",
-    imageSrc: img,
+    imageSrc: img5,
     imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
   },
 ];
@@ -95,11 +80,8 @@ export default function Eventos() {
                 />
               </div>
               <h3 className="mt-4 text-sm text-gray-700">{event.name}</h3>
-              <p className="mt-1 text-lg font-medium text-gray-900">
-                {event.price}
-              </p>
               <button
-                className="mt-4 w-full text-black bg-gray-50  hover:bg-[#FDABF0] py-2 px-4 rounded-lg transition ease-in-out duration-300"
+                className="mt-4 w-full text-black bg-gray-50 justify-center hover:bg-[#FDABF0] py-2 px-4 rounded-lg transition ease-in-out duration-300"
                 onClick={(e) => {
                   e.stopPropagation();
                   handleViewDetails(event.id);

@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import EventDetail from '../components/EventDetail'
 import Product from '../components/FloresE'
+import CartModal from '../components/CartModal';
 
 function DetalleEventos() {
+
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
+
   return (
     <div>
       <Header />
-      <EventDetail />
       <Product />
-      <Footer />
+      <Footer toggleCart={toggleCart} />
+      <CartModal isOpen={isCartOpen} toggleCart={toggleCart} />
     </div>
   )
 }

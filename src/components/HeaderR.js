@@ -23,11 +23,14 @@ export default function Header() {
             <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
-                src="../img/Logo.png"
+                src="../img/Logo copy.png"
                 className="h-12 w-auto"
                 alt="Company Logo"
               />
             </Link>
+            <p className="pt-[11px] pl-2 font-semibold">
+              Distribuidora de Flores Yesid
+            </p>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -38,22 +41,6 @@ export default function Header() {
               <span className="sr-only">Open main menu</span>
               <FontAwesomeIcon icon={faBars} />
             </button>
-          </div>
-          <div className="hidden lg:flex lg:gap-x-12">
-            <Link
-              to="/seller"
-              className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150"
-            >
-              <FontAwesomeIcon icon={faUserGroup} />
-              <span className="ml-2">Vendedor</span>
-            </Link>
-            <Link
-              to="/domiciliary"
-              className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150"
-            >
-              <FontAwesomeIcon icon={faPhone} />
-              <span className="ml-2">Domiciliario</span>
-            </Link>
           </div>
           <div className="hidden lg:flex text-[#3C474D] lg:flex-1 lg:justify-end hover:text-[#000] transition ease delay-150">
             <Link

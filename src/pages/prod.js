@@ -4,6 +4,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../index.css';
 import Header from '../components/HeaderVP';
+import img1 from '../static/img/unnamed.jpg'
+import img2 from '../static/img/unnamed (1).jpg'
+import img3 from '../static/img/unnamed (2).jpg'
 
 
 const Products = () => {
@@ -18,13 +21,13 @@ const Products = () => {
         </div>
         <div className="p5">
           <div className="p6">
-            <img className="imagen2" src="../img/Ramo1.jpeg" alt="" />
+          <img src={img1} alt="Bienvenido Vendedor" />
           </div>
         </div>
         <div className="p7">
           <div className="p8">
             <div className="p9">
-              <img className="imagen1" src="../img/Ramo2.jpeg" alt="" />
+            <img src={img2} alt="Bienvenido Vendedor" />
             </div>
           </div>
         </div>
@@ -59,7 +62,7 @@ const Products = () => {
         <div className="p30">
           <div className="p31">
             <div className="p32">
-              <img className="imagen3" src="../img/Ramo3.jpeg" alt="" />
+              <img src={img3} alt="Bienvenido Vendedor" />
             </div>
           </div>
         </div>

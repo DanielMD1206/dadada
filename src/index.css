@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 * {
     box-sizing: border-box
 }
@@ -62,7 +63,6 @@ body::-webkit-scrollbar {
     outline: none;
 }
 
-
 .body1 {
     display: flex;
     justify-content: center;
@@ -98,7 +98,6 @@ body::-webkit-scrollbar {
     font-size: 25px;
     color: #000000;
     padding: 35px 0px;
-
 }
 
 .navbar {
@@ -164,7 +163,7 @@ a:nth-child(1):hover~.animation1 {
 
 .wrapper2 {
     position: relative;
-    width: 450px;
+    width: 550px;
     background: #fff;
     border: 2px solid white;
     border-radius: 20px;
@@ -174,6 +173,7 @@ a:nth-child(1):hover~.animation1 {
     justify-content: center;
     align-items: center;
     margin-top: 150px;
+    margin-bottom: 60px;
 }
 
 .wrapper2 .form-box1 {
@@ -218,7 +218,6 @@ a:nth-child(1):hover~.animation1 {
     width: 100%;
     height: 40px;
     background: transparent;
-    border: 2px solid black;
     border-radius: 6px;
     padding-left: 10px;
     padding-right: 40px;
@@ -494,8 +493,8 @@ a:nth-child(1):hover~.animation2 {
 
 .te2 {
     text-align: center;
+    padding: 0 50px;
     padding-top: 150px;
-    padding-left: 100px;
 }
 
 .titi2 {
@@ -510,6 +509,10 @@ a:nth-child(1):hover~.animation2 {
 }
 
 /*Estilos pedidos*/
+
+.bienvenido{
+    width: 1300px;
+}
 
 .contenedor3 {
     background: #EEEEEE;
@@ -533,10 +536,8 @@ a:nth-child(1):hover~.animation2 {
 
 .v1 {
     width: 100%;
-    height: 836px;
+    height: 606px;
     background: rgba(255, 255, 255, 1);
-    padding: 24px 24px;
-    margin: 24px;
     opacity: 1;
     position: absolute;
     top: 64px;
@@ -559,7 +560,7 @@ a:nth-child(1):hover~.animation2 {
 
 .v3 {
     width: 556px;
-    height: 692px;
+    height: 606px;
     background: rgba(255, 255, 255, 1);
     padding: 24px 24px;
     margin: 16px;
@@ -594,7 +595,7 @@ a:nth-child(1):hover~.animation2 {
     width: 556px;
     color: rgba(0, 0, 0, 1);
     position: absolute;
-    left: 0px;
+    left: 40px;
     font-family: Inter;
     font-weight: Medium;
     font-size: 16px;
@@ -603,16 +604,15 @@ a:nth-child(1):hover~.animation2 {
 }
 
 .v5 {
-    width: 556px;
-    height: 812px;
+    width: 467px;
+    height: 606px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    margin: 8px;
     opacity: 1;
     position: absolute;
     top: 70px;
-    left: 604px;
+    left: 560px;
     overflow: hidden;
 }
 
@@ -648,8 +648,8 @@ a:nth-child(1):hover~.animation2 {
 }
 
 .img3 {
-    width: 556px;
-    height: 692px;
+    width: 440px;
+    height: 606px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -668,7 +668,7 @@ a:nth-child(1):hover~.animation2 {
     width: 556px;
     color: rgba(0, 0, 0, 1);
     position: absolute;
-    top: 0px;
+    top: 12px;
     left: 17px;
     font-family: Inter;
     font-weight: Medium;
@@ -679,12 +679,12 @@ a:nth-child(1):hover~.animation2 {
 
 .v9 {
     width: 256px;
-    height: 836px;
+    height: 606px;
     background: rgba(255, 255, 255, 1);
     opacity: 1;
     position: absolute;
     top: 64px;
-    left: 1184px;
+    left: 1028px;
     overflow: hidden;
     border-left: 1px solid rgba(130, 130, 130, 1);
 }
@@ -695,7 +695,7 @@ a:nth-child(1):hover~.animation2 {
     background: rgba(238, 238, 238, 1);
     opacity: 1;
     position: absolute;
-    top: 600px;
+    top: 500px;
     left: 24px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -939,7 +939,7 @@ a:nth-child(1):hover~.animation4 {
     color: rgba(130, 130, 130, 1);
     position: absolute;
     top: 705px;
-    left: 180px;
+    left: 63px;
     font-family: Inter;
     font-weight: Medium;
     font-size: 20px;
@@ -957,7 +957,7 @@ a:nth-child(1):hover~.animation4 {
     opacity: 1;
     position: absolute;
     top: 520px;
-    left: 156px;
+    left: 40px;
     overflow: hidden;
 }
 
@@ -1023,7 +1023,6 @@ a:nth-child(1):hover~.animation4 {
     height: 105%;
     object-fit: cover;
     object-position: center center;
-    padding-left: 200px;
 }
 
 .p7 {
@@ -1078,7 +1077,7 @@ a:nth-child(1):hover~.animation4 {
     height: 110%;
     object-fit: cover;
     object-position: center center;
-    padding-left: 150px;
+    padding-left: 40px;
 }
 
 .p10 {
@@ -1099,7 +1098,7 @@ a:nth-child(1):hover~.animation4 {
     color: rgba(0, 0, 0, 1);
     position: relative;
     top: 0px;
-    left: 85px;
+    text-align: center;
     font-family: Inter;
     font-weight: Bold;
     font-size: 64px;
@@ -1108,16 +1107,14 @@ a:nth-child(1):hover~.animation4 {
 }
 
 .p12 {
-    width: 842px;
     color: rgba(130, 130, 130, 1);
     position: absolute;
     top: 101px;
-    left: 0px;
+    left: 110px;
     font-family: Inter;
     font-weight: Regular;
     font-size: 24px;
     opacity: 1;
-    text-align: center;
 }
 
 .p13 {
@@ -1126,8 +1123,8 @@ a:nth-child(1):hover~.animation4 {
     background: rgba(255, 255, 255, 1);
     opacity: 1;
     position: absolute;
-    top: 834px;
-    left: 154px;
+    top: 780px;
+    left: 63px;
     overflow: hidden;
 }
 
@@ -1287,7 +1284,7 @@ a:nth-child(1):hover~.animation4 {
     color: rgba(0, 0, 0, 1);
     position: absolute;
     top: 659px;
-    left: 180px;
+    left: 63px;
     font-family: Inter;
     font-weight: Regular;
     font-size: 24px;
@@ -1305,7 +1302,7 @@ a:nth-child(1):hover~.animation4 {
     opacity: 1;
     position: absolute;
     top: 1537px;
-    left: 156px;
+    left: 40px;
     overflow: hidden;
 }
 
@@ -1409,7 +1406,7 @@ a:nth-child(1):hover~.animation4 {
     background: rgba(0, 0, 0, 1);
     opacity: 1;
     position: absolute;
-    top: 0px;
+    top: 3px;
     left: 0px;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
@@ -1425,7 +1422,7 @@ a:nth-child(1):hover~.animation4 {
     opacity: 1;
     position: absolute;
     top: 1826px;
-    left: 154px;
+    left: 63px;
     overflow: hidden;
 }
 
@@ -1561,7 +1558,7 @@ a:nth-child(1):hover~.animation4 {
     color: rgba(0, 0, 0, 1);
     position: absolute;
     top: 1675px;
-    left: 179px;
+    left: 63px;
     font-family: Inter;
     font-weight: Regular;
     font-size: 24px;
@@ -1574,7 +1571,7 @@ a:nth-child(1):hover~.animation4 {
     color: rgba(130, 130, 130, 1);
     position: absolute;
     top: 1720px;
-    left: 179px;
+    left: 63px;
     font-family: Inter;
     font-weight: Medium;
     font-size: 20px;
@@ -1592,7 +1589,7 @@ a:nth-child(1):hover~.animation4 {
     opacity: 1;
     position: absolute;
     top: 1013px;
-    left: 790px;
+    left: 720px;
     overflow: hidden;
 }
 
@@ -1629,7 +1626,7 @@ a:nth-child(1):hover~.animation4 {
     opacity: 1;
     position: absolute;
     top: 1302px;
-    left: 788px;
+    left: 758px;
     overflow: hidden;
 }
 
@@ -1765,7 +1762,7 @@ a:nth-child(1):hover~.animation4 {
     color: rgba(0, 0, 0, 1);
     position: absolute;
     top: 1150px;
-    left: 815px;
+    left: 750px;
     font-family: Inter;
     font-weight: Regular;
     font-size: 24px;
@@ -1778,7 +1775,7 @@ a:nth-child(1):hover~.animation4 {
     color: rgba(130, 130, 130, 1);
     position: absolute;
     top: 1190px;
-    left: 815px;
+    left: 750px;
     font-family: Inter;
     font-weight: Medium;
     font-size: 20px;
@@ -1983,7 +1980,6 @@ textarea {
 }
 
 button {
-    background-color: #000000;
     color: white;
     padding: 10px;
     border: none;
@@ -1992,12 +1988,6 @@ button {
     display: inline-flex;
     align-items: center;
     font-size: 16px;
-}
-
-button[type="button"] {
-    background-color: #ccc;
-    color: #000000;
-    margin-top: 10px;
 }
 
 button .b4 {
@@ -2948,7 +2938,7 @@ a:nth-child(1):hover~.animation6 {
     background: rgba(0, 0, 0, 1);
     opacity: 1;
     position: absolute;
-    top: 0px;
+    top: 2px;
     left: 0px;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
@@ -3389,22 +3379,19 @@ textarea {
 }
 
 button {
-    background-color: #000000;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 10px;
     display: inline-flex;
     align-items: center;
     margin-right: 15px;
-
 }
 
 button[type="button"] {
-    background-color: #ccc;
     color: #000000;
-    margin-top: 10px;
+
 }
 
 button .icon {

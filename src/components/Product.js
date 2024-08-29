@@ -84,7 +84,7 @@ export default function Product() {
   };
 
   return (
-    <div className="products pt-[6%] bg-gray-50 ">
+    <div className="products pt-[8%] bg-gray-50 ">
       <h1 className="text-center font-bold text-gray-900 text-3xl">
         <span className="span w-[200px] h-[1px] bg-gray-900 inline-block mr-4 "></span>
             Nuestros Productos
@@ -118,7 +118,7 @@ export default function Product() {
                 </div>
                 <div className="pt-[5px]">
                   <button
-                    className="w-full bg-gray-50  text-black py-2 px-4 rounded transform hover:bg-[#FDABF0] transition ease-in-out duration-300"
+                    className="w-full bg-gray-50 text-black py-2 justify-center rounded transform hover:bg-[#FDABF0] transition ease-in-out duration-300"
                     onClick={(e) => {
                       e.stopPropagation();
                       handleViewDetails(product.id);
