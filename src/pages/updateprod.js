@@ -85,7 +85,7 @@ const UpdateProduct = () => {
               placeholder="Ingrese la descripción del Producto aquí:"
             ></textarea>
 
-            <button type="submit" style={{ width: '89px' }}>Actualizar</button>
+            <button type="submit" className='text-white bg-black' style={{ width: '89px' }}>Actualizar</button>
           </form>
         </div>
       </div>

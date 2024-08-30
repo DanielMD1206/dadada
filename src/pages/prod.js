@@ -31,7 +31,7 @@ const Products = () => {
             </div>
           </div>
         </div>
-        <div className="p10">
+        <div className="p10 justify-center">
           <span className="p11">Productos en distribución</span>
           <span className="p12">Todos los productos que están en circulación</span>
         </div>

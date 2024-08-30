@@ -62,13 +62,13 @@ const DeleteProduct = () => {
           </button>
 
           <div className="b5">
-            <button type="submit" id="deleteButton" className="b6 text-black" onClick={handleDelete}>
+            <button type="submit" id="deleteButton" className="b6 text-white bg-black" onClick={handleDelete}>
               Eliminar
             </button>
             <button
               type="button"
               id="toggleButton"
-              className={isActive ? 'activate-button' : 'deactivate-button'}
+              className= {isActive ? 'activate-button' : 'deactivate-button text-white bg-red-600' }
               onClick={handleToggle}
             >
               {isActive ? 'Activo' : 'Inactivo'}
