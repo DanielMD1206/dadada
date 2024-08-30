@@ -1,54 +1,70 @@
 import { useNavigate } from 'react-router-dom';
-import img from "../static/img/unnamed (5).jpg";
-import img1 from "../static/img/unnamed (3).jpg"
-import img2 from "../static/img/unnamed (4).jpg"
-import img3 from "../static/img/unnamed (6).jpg"
-import img4 from "../static/img/unnamed (9).jpg"
-import img5 from "../static/img/unnamed (11).jpg"
+import img1 from "../static/img/cumpleaños.jpeg"
+import img2 from "../static/img/grado.jpeg"
+import img3 from "../static/img/boda.jpg"
+import img4 from "../static/img/funebre.jpeg"
+import img5 from "../static/img/mama.jpeg"
+import img6 from "../static/img/valentin.jpeg"
+import img7 from "../static/img/mujer.jpeg"
+import img8 from "../static/img/hombre.jpeg"
 
 const events = [
   {
     id: 1,
-    name: "Earthen Bottle",
-    href: "/evento/1",
-    imageSrc: img,
-    imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
-  },
-  {
-    id: 2,
-    name: "Earthen Bottle",
+    name: "Cumpleaños",
     href: "/evento/1",
     imageSrc: img1,
     imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
   },
   {
-    id: 3,
-    name: "Earthen Bottle",
+    id: 2,
+    name: "Grados",
     href: "/evento/1",
     imageSrc: img2,
     imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
   },
   {
-    id: 4,
-    name: "Earthen Bottle",
+    id: 3,
+    name: "Bodas",
     href: "/evento/1",
-    price: "$48",
     imageSrc: img3,
     imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
   },
   {
-    id: 5,
-    name: "Earthen Bottle",
+    id: 4,
+    name: "Funebres",
     href: "/evento/1",
     price: "$48",
-    imageSrc: img4  ,
+    imageSrc: img4,
+    imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
+  },
+  {
+    id: 5,
+    name: "Dia de la madre",
+    href: "/evento/1",
+    price: "$48",
+    imageSrc: img5  ,
     imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
   },
   {
     id: 6,
-    name: "Earthen Bottle",
+    name: "Dia de san valentin",
     href: "/evento/1",
-    imageSrc: img5,
+    imageSrc: img6,
+    imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
+  },
+  {
+    id: 7,
+    name: "Dia de la mujer",
+    href: "/evento/1",
+    imageSrc: img7,
+    imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
+  },
+  {
+    id: 8,
+    name: "Dia del hombre",
+    href: "/evento/1",
+    imageSrc: img8,
     imageAlt: "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
   },
 ];
