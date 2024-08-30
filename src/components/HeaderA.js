@@ -45,21 +45,21 @@ export default function AdminHeader() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             <Link
-              to="/admin/domiciliarios"
+              to="/domiciliary"
               className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150"
             >
               <FontAwesomeIcon icon={faBagShopping} />
               <span className="ml-2">Domiciliarios</span>
             </Link>
             <Link
-              to="/admin/products"
+              to="/prod"
               className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150"
             >
               <FontAwesomeIcon icon={faGifts} />
               <span className="ml-2">Productos</span>
             </Link>
             <Link
-              to="/admin/usuarios"
+              to="/crudli"
               className="text-sm font-semibold leading-6 text-[#3C474D] hover:text-[#000] transition ease delay-150"
             >
               <FontAwesomeIcon icon={faUserGroup} />
@@ -68,7 +68,7 @@ export default function AdminHeader() {
           </div>
           <div className="hidden lg:flex text-[#3C474D] lg:flex-1 lg:justify-end hover:text-[#000] transition ease delay-150">
             <Link
-              to="/logout"
+              to="/"
               className="text-sm font-semibold leading-6 tooltip"
               data-tooltip="Cerrar_sesion"
             >
@@ -116,7 +116,7 @@ export default function AdminHeader() {
                     <span className="ml-2">Domiciliarios</span>
                   </Link>
                   <Link
-                    to="/admin/products"
+                    to="/prod"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     <FontAwesomeIcon icon={faGifts} />

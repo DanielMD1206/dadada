@@ -22,6 +22,15 @@ import Clients from './pages/crudcli';
 import AddDeliveryPerson from './pages/adddomi';
 import TerminsAndConditions from "./components/TerminsAndConditions";
 import PolityPrivacity from "./components/PolityPrivacity";
+import Admin from "./pages/Admin";
+import EventoC from "./pages/EventoC"
+import EventoG from "./pages/EventoG";
+import EventoB from "./pages/EventoB";
+import EventoF from "./pages/EventoF"
+import EventoM from "./pages/EventoM";
+import EventoSV from "./pages/EventoSV";
+import EventoDM from "./pages/EventoDM";
+import EventoH from "./pages/EventoH";
 
 function App() {
   return (
@@ -50,6 +59,15 @@ function App() {
           <Route path="/adddomi" element={<AddDeliveryPerson />} />
           <Route path="/terminos" element={<TerminsAndConditions />} />
           <Route path="/privacy-policy" element={<PolityPrivacity />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/eventoC" element={<EventoC />} />
+          <Route path="/eventoG" element={<EventoG />} />
+          <Route path="/eventoB" element={<EventoB />} />
+          <Route path="/eventof" element={<EventoF />} />
+          <Route path="/eventoM" element={<EventoM />} />
+          <Route path="/eventoSV" element={<EventoSV />} />
+          <Route path="/eventoDM" element={<EventoDM />} />
+          <Route path="/eventoH" element={<EventoH />} />
         </Routes>
       </main>
     </div>
