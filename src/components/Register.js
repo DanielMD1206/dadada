@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Importa useNavigate
 import '../index.css';
 import Header from './HeaderR';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [error, setError] = useState(null);
+
+  const navigate = useNavigate(); // Inicializa useNavigate
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -21,18 +25,36 @@ const Register = () => {
 
   // Validación del formulario con Yup
   const validationSchema = Yup.object({
-    documentType: Yup.string().required('Seleccione el tipo de documento'),
-    documentNumber: Yup.string().required('Ingrese su número de documento'),
     name: Yup.string().required('Ingrese su nombre'),
     lastName: Yup.string().required('Ingrese su apellido'),
-    address: Yup.string().required('Ingrese su dirección'),
     phone: Yup.string().required('Ingrese su teléfono'),
     email: Yup.string().email('Correo no válido').required('Ingrese su correo'),
     password: Yup.string().required('Ingrese su contraseña'),
     confirmPassword: Yup.string()
       .oneOf([Yup.ref('password'), null], 'Las contraseñas deben coincidir')
-      .required('Confirme su contraseña')
+      .required('Confirme su contraseña'),
+    rol: Yup.string().oneOf(['Cliente', 'Administrador', 'Vendedor', 'Domiciliario'], 'Rol no válido').required('Seleccione un rol')
   });
+
+  const handleSubmit = async (values) => {
+    try {
+      const response = await axios.post('http://localhost:4000/api/register', {
+        nombre_usuario: values.name,
+        apellido_usuario: values.lastName,
+        celular_usuario: values.phone,
+        correo_electronico_usuario: values.email,
+        usuario: values.email,
+        contrasena_usuario: values.password,
+        rol_usuario: values.rol
+      });
+      console.log('Usuario registrado exitosamente:', response.data);
+      window.alert('Registro exitoso. Ahora puedes iniciar sesión.'); // Muestra la alerta
+      navigate('/login'); // Redirige al login
+    } catch (error) {
+      console.error('Error al enviar la solicitud:', error.response ? error.response.data : error.message);
+      setError(error.response ? error.response.data.message : error.message);
+    }
+  };
 
   return (
     <div className="body1">
@@ -40,48 +62,22 @@ const Register = () => {
       <div className="wrapper2">
         <div className="form-box1 login">
           <h2>Crear Cuenta</h2>
+          {error && <div className="error-message">{error}</div>}
           <Formik
             initialValues={{
-              documentType: '',
-              documentNumber: '',
               name: '',
               lastName: '',
-              address: '',
               phone: '',
               email: '',
               password: '',
-              confirmPassword: ''
+              confirmPassword: '',
+              rol: ''
             }}
             validationSchema={validationSchema}
-            onSubmit={(values) => {
-              console.log(values);
-              // Aquí puedes manejar el envío del formulario
-            }}
+            onSubmit={handleSubmit}
           >
             {({ errors, touched }) => (
               <Form className="for">
-                <div className="input-box1">
-                  <label htmlFor="documentType">Tipo de Documento</label>
-                  <div className="input-wrapper2">
-                    <span className="icon"><ion-icon name="document-text-outline"></ion-icon></span>
-                    <Field as="select" name="documentType" id="documentType" className={errors.documentType && touched.documentType ? 'input-error' : ''}>
-                      <option value="">Seleccione el tipo de documento</option>
-                      <option value="CC">Cédula de Ciudadanía</option>
-                      <option value="TI">Tarjeta de Identidad</option>
-                      <option value="CE">Cédula de Extranjería</option>
-                      <option value="PP">Pasaporte</option>
-                    </Field>
-                  </div>
-                </div>
-
-                <div className="input-box1">
-                  <label htmlFor="documentNumber">Número de Documento</label>
-                  <div className="input-wrapper2">
-                    <span className="icon"><ion-icon name="barcode-outline"></ion-icon></span>
-                    <Field type="text" name="documentNumber" id="documentNumber" placeholder="Ingrese su número de documento aquí:" className={errors.documentNumber && touched.documentNumber ? 'input-error' : ''} />
-                  </div>
-                </div>
-
                 <div className="input-box1">
                   <label htmlFor="name">Nombre</label>
                   <div className="input-wrapper2">
@@ -95,14 +91,6 @@ const Register = () => {
                   <div className="input-wrapper2">
                     <span className="icon"><ion-icon name="person-outline"></ion-icon></span>
                     <Field type="text" name="lastName" id="lastName" placeholder="Ingrese su apellido aquí:" className={errors.lastName && touched.lastName ? 'input-error' : ''} />
-                  </div>
-                </div>
-
-                <div className="input-box1">
-                  <label htmlFor="address">Dirección</label>
-                  <div className="input-wrapper2">
-                    <span className="icon"><ion-icon name="home-outline"></ion-icon></span>
-                    <Field type="text" name="address" id="address" placeholder="Ingrese su dirección aquí:" className={errors.address && touched.address ? 'input-error' : ''} />
                   </div>
                 </div>
 
@@ -161,6 +149,20 @@ const Register = () => {
                     >
                       <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
                     </button>
+                  </div>
+                </div>
+
+                <div className="input-box1">
+                  <label htmlFor="rol">Rol</label>
+                  <div className="input-wrapper2">
+                    <span className="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <Field as="select" name="rol" id="rol" className={errors.rol && touched.rol ? 'input-error' : ''}>
+                      <option value="">Seleccione un rol</option>
+                      <option value="Cliente">Cliente</option>
+                      <option value="Administrador">Administrador</option>
+                      <option value="Vendedor">Vendedor</option>
+                      <option value="Domiciliario">Domiciliario</option>
+                    </Field>
                   </div>
                 </div>
 

@@ -31,6 +31,7 @@ import EventoM from "./pages/EventoM";
 import EventoSV from "./pages/EventoSV";
 import EventoDM from "./pages/EventoDM";
 import EventoH from "./pages/EventoH";
+import ProductState from './pages/changeProductState';
 
 function App() {
   return (
@@ -49,7 +50,7 @@ function App() {
           <Route path="/seller" element={<SellerView />} />
           <Route path="/orders" element={<Orders />} /> 
           <Route path="/prod" element={<Products />} /> 
-          <Route path="/updateprod" element={<UpdateProduct />} /> 
+          <Route path="/updateprod/:id" element={<UpdateProduct />} /> 
           <Route path="/deletepd" element={<DeleteProduct />} /> 
           <Route path="/addprod" element={<AddProduct />} /> 
           <Route path="/domiciliary" element={<Couriers />} /> 
@@ -68,6 +69,7 @@ function App() {
           <Route path="/eventoSV" element={<EventoSV />} />
           <Route path="/eventoDM" element={<EventoDM />} />
           <Route path="/eventoH" element={<EventoH />} />
+          <Route path="/changeProductState/:id" element={<ProductState />} /> 
         </Routes>
       </main>
     </div>

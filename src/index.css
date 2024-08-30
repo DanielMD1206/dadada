@@ -56,7 +56,7 @@ body::-webkit-scrollbar {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 10px ;
+    font-size: 10px;
 }
 
 .password-toggle:focus {
@@ -510,7 +510,7 @@ a:nth-child(1):hover~.animation2 {
 
 /*Estilos pedidos*/
 
-.bienvenido{
+.bienvenido {
     width: auto;
 }
 
@@ -3450,4 +3450,33 @@ button .icon {
 .comp {
     justify-content: center;
     align-items: center;
+}
+
+.orders-container {
+    padding: 20px;
+    padding-top: 130px;
+}
+
+.pedidos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pedido-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.pedido-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
 }

@@ -1,72 +1,89 @@
-import { faEdit, faPlus, faToggleOff, faToggleOn, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faToggleOff, faToggleOn, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../index.css';
 import Header from '../components/HeaderV';
 
 const App = () => {
-  const [clients, setClients] = useState([]);
-  const [showAddModal, setShowAddModal] = useState(false);
+  const [usuarios, setUsuarios] = useState([]);
   const [showEditModal, setShowEditModal] = useState(false);
-  const [currentClient, setCurrentClient] = useState(null);
-  const [nextId, setNextId] = useState(1);
+  const [currentUsuario, setCurrentUsuario] = useState(null);
 
-  const openAddModal = () => setShowAddModal(true);
-  const closeAddModal = () => setShowAddModal(false);
-  
-  const openEditModal = (client) => {
-    setCurrentClient(client);
+  useEffect(() => {
+    const fetchUsuarios = async () => {
+      try {
+        const response = await axios.get('http://localhost:4000/api/usuario');
+        setUsuarios(response.data);
+      } catch (error) {
+        console.error('Error al obtener los usuarios:', error);
+      }
+    };
+
+    fetchUsuarios();
+  }, []);
+
+  const openEditModal = (usuario) => {
+    setCurrentUsuario(usuario);
     setShowEditModal(true);
   };
-  
+
   const closeEditModal = () => setShowEditModal(false);
 
-  const handleAddClient = (event) => {
+  const handleEditUsuario = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const newClient = {
-      id: nextId,
-      tipoDoc: formData.get('campo_tipoDoc'),
-      noDoc: formData.get('campo_noDoc'),
-      nombre: formData.get('campo_nombreU'),
-      apellido: formData.get('campo_apellido'),
-      direccion: formData.get('campo_direccion'),
-      telefono: formData.get('campo_telefono'),
-      correo: formData.get('campo_correo'),
+    const updatedUsuario = {
+      nombre_usuario: formData.get('campo_nombreU'),
+      apellido_usuario: formData.get('campo_apellido'),
+      celular_usuario: formData.get('campo_celular'),
+      correo_electronico_usuario: formData.get('campo_correo'),
+      usuario: formData.get('campo_usuario'),
+      contrasena_usuario: formData.get('campo_contrasena'),
+      rol_usuario: formData.get('campo_rol'),
+      estado_usuario: formData.get('campo_estado')
     };
-    setClients([...clients, newClient]);
-    setNextId(nextId + 1);
-    closeAddModal();
-  };  
-
-  const handleEditClient = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const updatedClient = {
-      id: currentClient.id,
-      tipoDoc: formData.get('campo_tipoDoc'),
-      noDoc: formData.get('campo_noDoc'),
-      nombre: formData.get('campo_nombreU'),
-      apellido: formData.get('campo_apellido'),
-      direccion: formData.get('campo_direccion'),
-      telefono: formData.get('campo_telefono'),
-      correo: formData.get('campo_correo'),
-    };
-    setClients(clients.map(client => client.id === updatedClient.id ? updatedClient : client));
-    closeEditModal();
-  };
-
-  const handleDeleteClient = (id) => {
-    if (window.confirm('¿Estás seguro de que deseas eliminar este Cliente?')) {
-      setClients(clients.filter(client => client.id !== id));
+    try {
+      await axios.put(`http://localhost:4000/api/usuario/${currentUsuario.id_usuario}`, updatedUsuario);
+      setUsuarios(usuarios.map(usuario => usuario.id_usuario === currentUsuario.id_usuario ? { ...updatedUsuario, id_usuario: currentUsuario.id_usuario } : usuario));
+      closeEditModal();
+    } catch (error) {
+      console.error('Error al actualizar el usuario:', error);
     }
   };
 
-  const handleToggleStatus = (id) => {
-    if (window.confirm('¿Estás seguro de que deseas cambiar el estado de este Cliente?')) {
-      setClients(clients.map(client => client.id === id ? { ...client, inactive: !client.inactive } : client));
+  const handleDeleteUsuario = async (id_usuario) => {
+    if (window.confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
+      try {
+        await axios.delete(`http://localhost:4000/api/usuario/${id_usuario}`);
+        setUsuarios(usuarios.filter(usuario => usuario.id_usuario !== id_usuario));
+      } catch (error) {
+        console.error('Error al eliminar el usuario:', error);
+      }
     }
   };
+
+  const handleToggleStatus = async (id_usuario) => {
+    if (window.confirm('¿Estás seguro de que deseas cambiar el estado de este usuario?')) {
+        try {
+            // Llamada a la API para cambiar el estado
+            await axios.patch(`http://localhost:4000/api/usuario/${id_usuario}/estado`);
+
+            // Actualiza el estado localmente para reflejar el cambio
+            const updatedUsuarios = usuarios.map(usuario => 
+                usuario.id_usuario === id_usuario ? { 
+                    ...usuario, 
+                    estado_usuario: usuario.estado_usuario === '1' ? '0' : '1' 
+                } : usuario
+            );
+
+            setUsuarios(updatedUsuarios);
+        } catch (error) {
+            console.error('Error al cambiar el estado del usuario:', error);
+            console.error('Detalles del error:', error.response ? error.response.data : error.message);
+        }
+    }
+};
 
   return (
     <div>
@@ -74,86 +91,49 @@ const App = () => {
 
       <div className="c1">
         <div className="c12">
-          <h1 className="fw-bold">Clientes</h1><br />
+          <h1 className="fw-bold">Usuarios</h1><br />
 
-          {/* Modal Add Client */}
-          {showAddModal && (
-            <div id="modalAgregar" className="modal-overlay">
-              <div className="modal-content">
-                <span className="modal-close" onClick={closeAddModal}>&times;</span>
-                <h2>Agregar Cliente</h2>
-                <form id="userForm" onSubmit={handleAddClient}>
-                  <div className="form-group">
-                    <label htmlFor="tipDocCliente">Tipo Documento</label>
-                    <input type="text" id="tipDocCliente" name="campo_tipoDoc" required />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="noDocCliente">Número Documento</label>
-                    <input type="number" id="noDocCliente" name="campo_noDoc" required />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="nombreCliente">Nombre</label>
-                    <input type="text" id="nombreCliente" name="campo_nombreU" required />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="apellidoCliente">Apellido</label>
-                    <input type="text" id="apellidoCliente" name="campo_apellido" required />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="direccionCliente">Dirección</label>
-                    <input type="text" id="direccionCliente" name="campo_direccion" required />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="telefonoCliente">Telefono</label>
-                    <input type="number" id="telefonoCliente" name="campo_telefono" required />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="correoCliente">Correo</label>
-                    <input type="email" id="correoCliente" name="campo_correo" required />
-                  </div>
-                  <input type="submit" className="btn btn-primary" value="Guardar Cliente" />
-                </form>
-              </div>
-            </div>
-          )}
-
-          {/* Modal Edit Client */}
-          {showEditModal && currentClient && (
+          {/* Modal Edit Usuario */}
+          {showEditModal && currentUsuario && (
             <div id="modalEditar" className="modal-overlay">
               <div className="modal-content">
                 <span className="modal-close" onClick={closeEditModal}>&times;</span>
-                <h2>Editar Cliente</h2>
-                <form id="editForm" onSubmit={handleEditClient}>
-                  <input type="hidden" id="editId" name="editId" value={currentClient.id} />
+                <h2>Editar Usuario</h2>
+                <form id="editForm" onSubmit={handleEditUsuario}>
+                  <input type="hidden" name="id_usuario" value={currentUsuario.id_usuario} />
                   <div className="form-group">
-                    <label htmlFor="editTipDocCliente">Tipo Documento</label>
-                    <input type="text" id="editTipDocCliente" name="campo_tipoDoc" defaultValue={currentClient.tipoDoc} required />
+                    <label htmlFor="editNombreUsuario">Nombre</label>
+                    <input type="text" id="editNombreUsuario" name="campo_nombreU" defaultValue={currentUsuario.nombre_usuario} required />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="editNoDocCliente">Número Documento</label>
-                    <input type="number" id="editNoDocCliente" name="campo_noDoc" defaultValue={currentClient.noDoc} required />
+                    <label htmlFor="editApellidoUsuario">Apellido</label>
+                    <input type="text" id="editApellidoUsuario" name="campo_apellido" defaultValue={currentUsuario.apellido_usuario} required />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="editNombreCliente">Nombre</label>
-                    <input type="text" id="editNombreCliente" name="campo_nombreU" defaultValue={currentClient.nombre} required />
+                    <label htmlFor="editCelularUsuario">Celular</label>
+                    <input type="number" id="editCelularUsuario" name="campo_celular" defaultValue={currentUsuario.celular_usuario} required />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="editApellidoCliente">Apellido</label>
-                    <input type="text" id="editApellidoCliente" name="campo_apellido" defaultValue={currentClient.apellido} required />
+                    <label htmlFor="editCorreoUsuario">Correo</label>
+                    <input type="email" id="editCorreoUsuario" name="campo_correo" defaultValue={currentUsuario.correo_electronico_usuario} required />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="editDireccionCliente">Dirección</label>
-                    <input type="text" id="editDireccionCliente" name="campo_direccion" defaultValue={currentClient.direccion} required />
+                    <label htmlFor="editUsuario">Usuario</label>
+                    <input type="text" id="editUsuario" name="campo_usuario" defaultValue={currentUsuario.usuario} required />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="editTelefonoCliente">Telefono</label>
-                    <input type="number" id="editTelefonoCliente" name="campo_telefono" defaultValue={currentClient.telefono} required />
+                    <label htmlFor="editContrasena">Contraseña</label>
+                    <input type="password" id="editContrasena" name="campo_contrasena" defaultValue={currentUsuario.contrasena_usuario} required />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="editCorreoCliente">Correo</label>
-                    <input type="email" id="editCorreoCliente" name="campo_correo" defaultValue={currentClient.correo} required />
+                    <label htmlFor="editRol">Rol</label>
+                    <input type="text" id="editRol" name="campo_rol" defaultValue={currentUsuario.rol_usuario} required />
                   </div>
-                  <input type="submit" className="btn btn-primary" value="Actualizar Cliente" />
+                  <div className="form-group">
+                    <label htmlFor="editEstado">Estado</label>
+                    <input type="text" id="editEstado" name="campo_estado" defaultValue={currentUsuario.estado_usuario} required />
+                  </div>
+                  <input type="submit" className="btn btn-primary" value="Actualizar Usuario" />
                 </form>
               </div>
             </div>
@@ -162,55 +142,57 @@ const App = () => {
           <table>
             <thead>
               <tr>
-                <th>id</th>
-                <th>Tipo doc</th>
-                <th>Numero doc</th>
+                <th>ID</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
-                <th>Dirección</th>
-                <th>Telefono</th>
+                <th>Celular</th>
                 <th>Correo</th>
+                <th>Usuario</th>
+                <th>Rol</th>
+                <th>Estado</th>
                 <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
-              {clients.map(client => (
-                <tr key={client.id} className={client.inactive ? 'inactive' : ''}>
-                  <td>{client.id}</td>
-                  <td>{client.tipoDoc}</td>
-                  <td>{client.noDoc}</td>
-                  <td>{client.nombre}</td>
-                  <td>{client.apellido}</td>
-                  <td>{client.direccion}</td>
-                  <td>{client.telefono}</td>
-                  <td>{client.correo}</td>
-                  <td>
-                    <div className="actions">
-                      <FontAwesomeIcon
-                        icon={faEdit}
-                        className="icon-edit"
-                        onClick={() => openEditModal(client)} 
-                      />
-                      <FontAwesomeIcon 
-                        icon={faTrash} 
-                        className="icon-delete" 
-                        onClick={() => handleDeleteClient(client.id)} 
-                      />
-                      <FontAwesomeIcon 
-                        icon={client.inactive ? faToggleOff : faToggleOn} 
-                        className="icon-toggle" 
-                        onClick={() => handleToggleStatus(client.id)} 
-                      />
-                    </div>
-                  </td>
+              {usuarios.length > 0 ? (
+                usuarios.map(usuario => (
+                  <tr key={usuario.id_usuario} className={usuario.estado_usuario === '0' ? 'inactive' : ''}>
+                    <td>{usuario.id_usuario}</td>
+                    <td>{usuario.nombre_usuario}</td>
+                    <td>{usuario.apellido_usuario}</td>
+                    <td>{usuario.celular_usuario}</td>
+                    <td>{usuario.correo_electronico_usuario}</td>
+                    <td>{usuario.usuario}</td>
+                    <td>{usuario.rol_usuario}</td>
+                    <td>{usuario.estado_usuario === '1' ? 'Activo' : 'Inactivo'}</td>
+                    <td>
+                      <div className="actions">
+                        <FontAwesomeIcon
+                          icon={faEdit}
+                          className="icon-edit"
+                          onClick={() => openEditModal(usuario)}
+                        />
+                        <FontAwesomeIcon
+                          icon={faTrash}
+                          className="icon-delete"
+                          onClick={() => handleDeleteUsuario(usuario.id_usuario)}
+                        />
+                        <FontAwesomeIcon
+                          icon={usuario.estado_usuario === '1' ? faToggleOn : faToggleOff}
+                          className="icon-toggle"
+                          onClick={() => handleToggleStatus(usuario.id_usuario)}
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="9">No hay usuarios disponibles</td>
                 </tr>
-              ))}
+              )}
             </tbody>
           </table>
-
-          <button className="btn btn-primary" onClick={openAddModal}>
-            <FontAwesomeIcon icon={faPlus} /> Agregar Cliente
-          </button>
         </div>
       </div>
     </div>

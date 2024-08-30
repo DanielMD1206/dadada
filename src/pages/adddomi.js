@@ -132,7 +132,7 @@ const AddDeliveryPerson = () => {
             required
           ></textarea>
 
-          <button type="submit">Añadir domiciliario</button>
+          <button type="submit" className='text-white bg-black'>Añadir domiciliario</button>
         </form>
       </div>
     </div>
