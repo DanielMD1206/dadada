@@ -1,12 +1,19 @@
 import { useNavigate } from 'react-router-dom';
-import img from "../static/img/pexels-iriser-1408221 (2).jpg";
+import img1 from "../static/img/funebre1.jpeg"
+import img2 from "../static/img/funebre2.jpeg"
+import img3 from "../static/img/funebre3.jpeg"
+import img4 from "../static/img/funebre4.jpeg"
+import img5 from "../static/img/funebre5.jpeg"
+import img6 from "../static/img/funebre6.jpeg"
+import img7 from "../static/img/funebre7.jpeg"
+import img8 from "../static/img/funebre8.jpeg"
 
 const products = [
   {
     id: 1,
     name: "Basic Tee",
     href: "#",
-    imageSrc: img,
+    imageSrc: img1,
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
     color: "Black",
@@ -15,7 +22,7 @@ const products = [
     id: 2,
     name: "Basic Tee",
     href: "#",
-    imageSrc: img,
+    imageSrc: img2,
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
     color: "Black",
@@ -24,7 +31,7 @@ const products = [
     id: 3,
     name: "Basic Tee",
     href: "#",
-    imageSrc: img,
+    imageSrc: img3,
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
     color: "Black",
@@ -33,7 +40,7 @@ const products = [
     id: 4,
     name: "Basic Tee",
     href: "#",
-    imageSrc: img,
+    imageSrc: img4,
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
     color: "Black",
@@ -42,7 +49,7 @@ const products = [
     id: 5,
     name: "Basic Tee",
     href: "#",
-    imageSrc: img,
+    imageSrc: img5,
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
     color: "Black",
@@ -51,7 +58,7 @@ const products = [
     id: 6,
     name: "Basic Tee",
     href: "#",
-    imageSrc: img,
+    imageSrc: img6,
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
     color: "Black",
@@ -60,7 +67,7 @@ const products = [
     id: 7,
     name: "Basic Tee",
     href: "#",
-    imageSrc: img,
+    imageSrc: img7,
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
     color: "Black",
@@ -69,7 +76,7 @@ const products = [
     id: 8,
     name: "Basic Tee",
     href: "#",
-    imageSrc: img,
+    imageSrc: img8,
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
     color: "Black",

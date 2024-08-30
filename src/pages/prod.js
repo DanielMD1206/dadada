@@ -2,11 +2,11 @@ import { faEdit, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../index.css';
 import Header from '../components/HeaderVP';
-import img1 from '../static/img/unnamed.jpg'
-import img2 from '../static/img/unnamed (1).jpg'
-import img3 from '../static/img/unnamed (2).jpg'
+import '../index.css';
+import img1 from '../static/img/producto1.jpeg';
+import img2 from '../static/img/producto2.jpeg';
+import img3 from '../static/img/producto3.jpeg';
 
 
 const Products = () => {
