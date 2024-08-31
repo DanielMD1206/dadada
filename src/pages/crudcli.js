@@ -7,6 +7,8 @@ import Header from '../components/HeaderV';
 
 const App = () => {
   const [usuarios, setUsuarios] = useState([]);
+  const [filteredUsuarios, setFilteredUsuarios] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
   const [showEditModal, setShowEditModal] = useState(false);
   const [currentUsuario, setCurrentUsuario] = useState(null);
 
@@ -15,6 +17,7 @@ const App = () => {
       try {
         const response = await axios.get('http://localhost:4000/api/usuario');
         setUsuarios(response.data);
+        setFilteredUsuarios(response.data);
       } catch (error) {
         console.error('Error al obtener los usuarios:', error);
       }
@@ -22,6 +25,18 @@ const App = () => {
 
     fetchUsuarios();
   }, []);
+
+  useEffect(() => {
+    const results = usuarios.filter(usuario =>
+      usuario.nombre_usuario.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      usuario.id_usuario.toString().includes(searchQuery)
+    );
+    setFilteredUsuarios(results);
+  }, [searchQuery, usuarios]);
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
 
   const openEditModal = (usuario) => {
     setCurrentUsuario(usuario);
@@ -52,38 +67,26 @@ const App = () => {
     }
   };
 
-  const handleDeleteUsuario = async (id_usuario) => {
-    if (window.confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
+  const handleToggleStatus = async (id_usuario) => {
+    if (window.confirm('¿Estás seguro de que deseas cambiar el estado de este usuario?')) {
       try {
-        await axios.delete(`http://localhost:4000/api/usuario/${id_usuario}`);
-        setUsuarios(usuarios.filter(usuario => usuario.id_usuario !== id_usuario));
+        await axios.patch(`http://localhost:4000/api/usuario/${id_usuario}/estado`);
+        const updatedUsuarios = usuarios.map(usuario =>
+          usuario.id_usuario === id_usuario ? {
+            ...usuario,
+            estado_usuario: usuario.estado_usuario === '1' ? '0' : '1'
+          } : usuario
+        );
+        setUsuarios(updatedUsuarios);
+        setFilteredUsuarios(updatedUsuarios.filter(usuario =>
+          usuario.nombre_usuario.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          usuario.id_usuario.toString().includes(searchQuery)
+        ));
       } catch (error) {
-        console.error('Error al eliminar el usuario:', error);
+        console.error('Error al cambiar el estado del usuario:', error);
       }
     }
   };
-
-  const handleToggleStatus = async (id_usuario) => {
-    if (window.confirm('¿Estás seguro de que deseas cambiar el estado de este usuario?')) {
-        try {
-            // Llamada a la API para cambiar el estado
-            await axios.patch(`http://localhost:4000/api/usuario/${id_usuario}/estado`);
-
-            // Actualiza el estado localmente para reflejar el cambio
-            const updatedUsuarios = usuarios.map(usuario => 
-                usuario.id_usuario === id_usuario ? { 
-                    ...usuario, 
-                    estado_usuario: usuario.estado_usuario === '1' ? '0' : '1' 
-                } : usuario
-            );
-
-            setUsuarios(updatedUsuarios);
-        } catch (error) {
-            console.error('Error al cambiar el estado del usuario:', error);
-            console.error('Detalles del error:', error.response ? error.response.data : error.message);
-        }
-    }
-};
 
   return (
     <div>
@@ -92,6 +95,17 @@ const App = () => {
       <div className="c1">
         <div className="c12">
           <h1 className="fw-bold">Usuarios</h1><br />
+
+          {/* Barra de búsqueda */}
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="Buscar por ID o nombre"
+              value={searchQuery}
+              onChange={handleSearchChange}
+              className="search-input"
+            />
+          </div>
 
           {/* Modal Edit Usuario */}
           {showEditModal && currentUsuario && (
@@ -121,18 +135,7 @@ const App = () => {
                     <label htmlFor="editUsuario">Usuario</label>
                     <input type="text" id="editUsuario" name="campo_usuario" defaultValue={currentUsuario.usuario} required />
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="editContrasena">Contraseña</label>
-                    <input type="password" id="editContrasena" name="campo_contrasena" defaultValue={currentUsuario.contrasena_usuario} required />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="editRol">Rol</label>
-                    <input type="text" id="editRol" name="campo_rol" defaultValue={currentUsuario.rol_usuario} required />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="editEstado">Estado</label>
-                    <input type="text" id="editEstado" name="campo_estado" defaultValue={currentUsuario.estado_usuario} required />
-                  </div>
+                  {/* Los campos de rol, contraseña y estado han sido eliminados */}
                   <input type="submit" className="btn btn-primary" value="Actualizar Usuario" />
                 </form>
               </div>
@@ -154,8 +157,8 @@ const App = () => {
               </tr>
             </thead>
             <tbody>
-              {usuarios.length > 0 ? (
-                usuarios.map(usuario => (
+              {filteredUsuarios.length > 0 ? (
+                filteredUsuarios.map(usuario => (
                   <tr key={usuario.id_usuario} className={usuario.estado_usuario === '0' ? 'inactive' : ''}>
                     <td>{usuario.id_usuario}</td>
                     <td>{usuario.nombre_usuario}</td>
@@ -171,11 +174,6 @@ const App = () => {
                           icon={faEdit}
                           className="icon-edit"
                           onClick={() => openEditModal(usuario)}
-                        />
-                        <FontAwesomeIcon
-                          icon={faTrash}
-                          className="icon-delete"
-                          onClick={() => handleDeleteUsuario(usuario.id_usuario)}
                         />
                         <FontAwesomeIcon
                           icon={usuario.estado_usuario === '1' ? faToggleOn : faToggleOff}
